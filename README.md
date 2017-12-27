@@ -4,7 +4,7 @@
 ## 截图
 ![Image text](https://github.com/jiangzhenggeng/wxcode-addr/blob/master/WX20170621-122959%402x.png)
 
-## 试用方式
+## 使用方式
 
 ```html
   <addr-select
