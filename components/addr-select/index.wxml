@@ -1,0 +1,83 @@
+<view>
+  <slot></slot>
+  <view class="area2-select-wrap {{show?'show':''}}">
+    <view class="area2-select-mask" bindtouchend="close"/>
+    <view class="area2-select-inner">
+      <view class="area2-select-header">
+        <view class="area2-close-wrap" bindtap="close">
+          <image class="area2-close-icon" src="http://cdn.jiguo.com/static/WeiXin/images/center/area_close.png"/>
+        </view>
+        <view>所在区域</view>
+      </view>
+      <view class="area2-sub-header">
+        <block wx:if="{{addrSelect.length}}">
+          <view
+            wx:for="{{addrSelect}}"
+            wx:for-item="addrSelectItem"
+            wx:for-index="addrSelectIndex"
+            wx:key="{{addrSelectItem.id}}"
+            class="area2-sub-item {{currentTab==addrSelectIndex?'on':''}}"
+            bindtap="tapTabBar"
+            data-current-tab="{{addrSelectIndex}}"
+          >
+            {{addrSelectItem.name}}
+          </view>
+        </block>
+        <block wx:if="{{addrSelect.length<addrList.length}}">
+          <view
+            class="area2-sub-item on"
+            bindtap="tapTabBar"
+            data-current-tab="{{addrSelect.length}}"
+          >
+            {{'请选择'}}
+          </view>
+        </block>
+      </view>
+      <view class="area2-item-wrap">
+        <swiper
+          current="{{currentTab}}"
+          class="area2-swiper-box"
+          duration="300"
+          bindchange="swiperChange"
+        >
+          <swiper-item
+            wx:for="{{addrList}}"
+            wx:for-item="addrListItem"
+            wx:for-index="addrListIndex"
+            wx:key="{{addrListItem}}"
+          >
+            <scroll-view scroll-y="true" style="height:100%">
+              <view class="area2-swiper-inner">
+                <view
+                  wx:for="{{addrListItem}}"
+                  wx:key="{{item.name}}"
+                  bindtap="clickSelectArea"
+                  data-item-name="{{item.name}}"
+                  data-item-id="{{item.id}}"
+                  data-current-tab="{{addrListIndex}}"
+                  class="area2-swiper-item {{item.name==addrSelect[addrListIndex].name?'on':''}}"
+                >
+                  <view class="area2-swiper-areaname">{{item.name}}</view>
+                </view>
+              </view>
+            </scroll-view>
+          </swiper-item>
+        </swiper>
+
+      </view>
+
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

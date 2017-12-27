@@ -1,5 +1,8 @@
 {
-    "navigationBarTitleText": "地址选择器",
-    "backgroundColor": "#F0F0F0",
-    "enablePullDownRefresh":false
+  "navigationBarTitleText": "地址选择器",
+  "backgroundColor": "#F0F0F0",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "addr-select": "../../components/addr-select/index"
+  }
 }

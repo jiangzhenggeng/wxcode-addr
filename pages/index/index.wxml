@@ -1,10 +1,15 @@
-
-<import src="../../template/area_select.wxml"/>
 <view class="container">
-  <view class="select" bindtap="choosearea">点击我</view>
-  <view class="value" wx:if="{{address.resideprovince}}">{{address.resideprovince}}-{{address.residecity}}-{{address.country}}</view>
+  <addr-select
+    show="{{showArea}}"
+    bind:close="closeArea"
+    bind:select="selectArea"
+  >
+    <view class="select" bindtap="openArea">点击我</view>
+  </addr-select>
+  <view class="value">
+    {{address[0]&&address[0].name}}-{{address[1]&&address[1].name}}-{{address[2]&&address[2].name}}
+  </view>
 </view>
-<template is="area_select" data="{{showArea,resideprovince,residecity,country,currentTab,curr_pro,curr_cit,curr_cou}}" />
 
 
 

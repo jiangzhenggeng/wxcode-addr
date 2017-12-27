@@ -1,0 +1,16 @@
+function showItem(addrList, addrSelect, addrListIndex) {
+	if (addrSelect.length) {
+		if (addrSelect.length <= addrList.length) {
+			return true
+		} else {
+			return false
+		}
+	} else {
+		return addrSelect[addrListIndex] || addrListIndex == 0
+	}
+}
+
+
+module.exports = {
+	showItem: showItem
+}
