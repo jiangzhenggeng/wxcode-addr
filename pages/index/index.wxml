@@ -1,10 +1,8 @@
 <view class="container">
   <addr-select
-    show="{{showArea}}"
-    bind:close="closeArea"
     bind:select="selectArea"
   >
-    <view class="select" bindtap="openArea">点击我</view>
+    <view class="select">点击我</view>
   </addr-select>
   <view class="value">
     {{address[0]&&address[0].name}}-{{address[1]&&address[1].name}}-{{address[2]&&address[2].name}}

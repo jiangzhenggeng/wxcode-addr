@@ -22,56 +22,6 @@ function getCurrentItemList(cityList, pid, defaultSelect) {
 	}
 }
 
-// var list = []
-//
-// var idCount = 1
-// cityList.forEach((item) => {
-// 	list.push({
-// 		id: idCount,
-// 		pid: 0,
-// 		name: item.name,
-// 	})
-// 	if (item.city && item.city.length) {
-// 		let cityIdCount = idCount
-// 		item.city.forEach((city) => {
-// 			list.push({
-// 				id: ++cityIdCount,
-// 				pid: idCount,
-// 				name: city.name
-// 			})
-// 			if (city.area && city.area.length) {
-// 				let areaIdCount = cityIdCount
-// 				city.area.forEach((area) => {
-// 					list.push({
-// 						id: ++areaIdCount,
-// 						pid: cityIdCount,
-// 						name: area.name
-// 					})
-// 				})
-// 				cityIdCount = areaIdCount
-// 			}else{
-// 				let pid = cityIdCount
-// 				list.push({
-// 					id: ++cityIdCount,
-// 					pid: pid,
-// 					name: city.name,
-// 				})
-// 			}
-// 		})
-// 		idCount = cityIdCount
-// 	} else {
-// 		for (var i = 0; i < 2; i++) {
-// 			list.push({
-// 				id: ++idCount,
-// 				pid: idCount,
-// 				name: item.name,
-// 			})
-// 		}
-// 	}
-// })
-//
-// console.log(JSON.stringify(list))
-
 
 Component({
 	properties: {
@@ -116,7 +66,16 @@ Component({
 		})
 	},
 	methods: {
+		open() {
+			this.setData({
+				show: true
+			})
+			this.triggerEvent('open')
+		},
 		close() {
+			this.setData({
+				show: false
+			})
 			this.triggerEvent('close')
 		},
 		tapTabBar(e) {
