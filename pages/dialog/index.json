@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "alert",
+  "backgroundColor": "#F0F0F0",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "dialog-modal": "../../components/dialog-modal/index",
+    "dialog-alert": "../../components/dialog-alert/index",
+    "dialog-loading": "../../components/dialog-loading/index",
+    "custom-button": "../../components/custom-button/index"
+  }
+}

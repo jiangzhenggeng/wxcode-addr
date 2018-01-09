@@ -25,7 +25,7 @@
         </block>
         <block wx:if="{{addrSelect.length<addrList.length}}">
           <view
-            class="area2-sub-item on"
+            class="area2-sub-item {{currentTab>=addrList.length-1?'on':''}}"
             catch:tap="tapTabBar"
             data-current-tab="{{addrSelect.length}}"
           >

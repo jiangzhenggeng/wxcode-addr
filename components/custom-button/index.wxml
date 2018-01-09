@@ -1,0 +1,15 @@
+<view catch:tap="click" class="{{className}}">
+  <slot></slot>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,6 +7,7 @@
   <view class="value">
     {{address[0]&&address[0].name}}-{{address[1]&&address[1].name}}-{{address[2]&&address[2].name}}
   </view>
+  <navigator class="select" url="../dialog/index">组件</navigator>
 </view>
 
 

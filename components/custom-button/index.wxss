@@ -1,0 +1,34 @@
+.button {
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  box-sizing: border-box;
+}
+.button,
+.button.small {
+  height: 56rpx;
+  font-size: 28rpx;
+}
+.button.middle {
+  height: 72rpx;
+  font-size: 32rpx;
+}
+.button.larg {
+  height: 84rpx;
+  font-size: 36rpx;
+}
+.button,
+.button.red {
+  background: #fe5341;
+  color: #fff;
+}
+.button.gray {
+  background: #ccc;
+  color: #fff;
+}
+.button.green {
+  background: green;
+  color: #fff;
+}

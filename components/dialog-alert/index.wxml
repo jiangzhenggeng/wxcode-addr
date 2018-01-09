@@ -1,0 +1,18 @@
+<view catch:tap="open">
+  <slot></slot>
+  <view class="area2-select-wrap {{show?'show':''}}">
+
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

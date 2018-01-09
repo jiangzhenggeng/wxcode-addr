@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.7.2",
-	"appid": "touristappid",
+	"appid": "wxfbcf50cdd695e9d9",
 	"projectname": "%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8",
 	"condition": {
 		"search": {
@@ -22,7 +22,14 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "对话框",
+					"pathName": "pages/dialog/index",
+					"query": ""
+				}
+			]
 		}
 	}
 }

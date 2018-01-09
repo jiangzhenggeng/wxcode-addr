@@ -1,6 +1,7 @@
 {
     "pages": [
-        "pages/index/index"
+        "pages/addr-select/index",
+        "pages/dialog/index"
     ],
     "window": {
         "navigationBarTextStyle": "black",

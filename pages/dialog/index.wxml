@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="ex-button">
+    <custom-button
+      className="button larg"
+      class="ex-button"
+    >
+      <view>custom-button</view>
+    </custom-button>
+  </view>
+  <view class="ex-button">
+    <custom-button
+      className="button larg"
+    >
+      <view>modal</view>
+    </custom-button>
+  </view>
+  <view class="ex-button">
+    <custom-button
+      className="button larg"
+      class="ex-button"
+    >
+      <view>alert</view>
+    </custom-button>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
