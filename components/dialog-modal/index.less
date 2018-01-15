@@ -1,0 +1,28 @@
+.dialog-modal-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+
+  .dialog-modal-inner {
+    width: 100%;
+    height: 100%;
+    animation: dialog-modal-zoom .3s;
+  }
+}
+
+@keyframes dialog-modal-zoom {
+  0% {
+    transform: scale(0)
+  }
+  50% {
+    transform: scale(1.1)
+  }
+  100% {
+    transform: scale(1)
+  }
+}

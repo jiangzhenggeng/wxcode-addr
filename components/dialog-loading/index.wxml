@@ -1,9 +1,20 @@
-<view catch:tap="open">
-  <slot></slot>
-  <view class="area2-select-wrap {{show?'show':''}}">
-
+<dialog-modal
+  show="{{show}}"
+  zIndex="{{zIndex}}"
+  animate="{{animate}}"
+>
+  <view class="dialog-loading-wrap">
+    <view class="dialog-loading-inner">
+      <view class="dialog-loading-icon">
+        <image class="image" src="./loading.svg" />
+      </view>
+      <view class="dialog-loading-text">
+        <slot wx:if="{{!message}}"></slot>
+        <block wx:else>{{message}}</block>
+      </view>
+    </view>
   </view>
-</view>
+</dialog-modal>
 
 
 

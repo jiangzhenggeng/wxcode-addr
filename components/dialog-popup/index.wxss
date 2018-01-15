@@ -1,0 +1,27 @@
+.dialog-popup-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialog-popup-wrap .modal-wrap-inner {
+  position: relative;
+  background: #fff;
+  width: 75%;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.dialog-popup-wrap .modal-wrap-inner.has-close {
+  padding-top: 40rpx;
+}
+.dialog-popup-wrap .modal-wrap-close {
+  position: absolute;
+  right: 15rpx;
+  top: 15rpx;
+  width: 42rpx;
+  height: 42rpx;
+  background-image: url(http://cdn.jiguo.com/static/WeiXin/images/close_64.svg);
+  background-size: 42rpx auto;
+}

@@ -1,0 +1,18 @@
+<dialog-modal
+  show="{{show}}"
+  zIndex="{{zIndex}}"
+  animate="{{animate}}"
+>
+  <view class="dialog-popup-wrap">
+    <view class="modal-wrap-inner {{close?'has-close':''}}">
+      <view
+        wx:if="{{close}}"
+        class="modal-wrap-close"
+        catch:tap="_closeDialogPopup"
+      />
+      <view class="modal-wrap-body">
+        <slot></slot>
+      </view>
+    </view>
+  </view>
+</dialog-modal>

@@ -5,6 +5,7 @@
   align-items: center;
   margin: auto;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .button,
 .button.small {

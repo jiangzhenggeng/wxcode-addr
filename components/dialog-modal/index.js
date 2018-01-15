@@ -1,20 +1,10 @@
-
-
+import DialogBehavios from 'dialog-behavior'
 
 Component({
-	properties: {
-
-	},
-	data: {
-
-	},
-	created() {
-
-	},
-	attached() {
-
-	},
+	behaviors: [DialogBehavios],
 	methods: {
-
+		_touchmove(e) {
+			this.triggerEvent('touchmove', e)
+		}
 	}
 })

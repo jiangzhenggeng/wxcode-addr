@@ -1,0 +1,4 @@
+<view class="countdown-wrap">
+  <text>{{time}}</text>
+  <slot></slot>
+</view>

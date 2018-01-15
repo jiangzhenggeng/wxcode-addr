@@ -1,19 +1,21 @@
 {
-    "pages": [
-        "pages/addr-select/index",
-        "pages/dialog/index"
-    ],
-    "window": {
-        "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "地址选择器",
-        "navigationBarBackgroundColor": "#F8F8F8",
-        "backgroundColor": "#f0f0f0"
-    },
-    "networkTimeout": {
-        "request": 10000,
-        "connectSocket": 10000,
-        "uploadFile": 10000,
-        "downloadFile": 10000
-    },
-    "debug": false
+  "pages": [
+    "pages/index/index",
+    "pages/components/addr-select/index",
+    "pages/components/countdown/index",
+    "pages/components/dialog/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "自定义组件",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#f0f0f0"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
 }

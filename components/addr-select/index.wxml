@@ -1,4 +1,4 @@
-<view catch:tap="open">
+<view catch:tap="open" class="area-select-wrap">
   <slot></slot>
   <view class="area2-select-wrap {{show?'show':''}}">
     <view class="area2-select-mask" catch:tap="close"/>
@@ -65,7 +65,6 @@
         </swiper>
 
       </view>
-
     </view>
   </view>
 </view>

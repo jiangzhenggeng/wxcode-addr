@@ -1,6 +1,3 @@
 {
-    "navigationBarTitleText": "alert",
-    "backgroundColor": "#F0F0F0",
-    "enablePullDownRefresh":false,
     "component": true
 }

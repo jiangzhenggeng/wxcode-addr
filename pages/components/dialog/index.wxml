@@ -1,0 +1,71 @@
+<view class="container">
+
+  <view class="ex-button">
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+      bind:click="showDialogAlertClick"
+    >
+      <view>dialog-alert</view>
+    </custom-button>
+    <dialog-alert
+      show="{{showDialogAlertShow}}"
+      buttonCancelText="cancel"
+      buttonCancelStyle="color:#FF5E4E"
+      buttonOkText="ok"
+      buttonOkStyle="color:#FF5E4E"
+    >
+      <view slot="message">弹窗内容</view>
+    </dialog-alert>
+  </view>
+
+  <view class="ex-button">
+    <custom-button
+      className="button gray larg"
+    >
+      <view>dialog-loading</view>
+    </custom-button>
+  </view>
+
+  <view class="ex-button">
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+    >
+      <view>dialog-modal</view>
+    </custom-button>
+  </view>
+
+  <view class="ex-button">
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+    >
+      <view>dialog-popup</view>
+    </custom-button>
+  </view>
+
+  <view class="ex-button">
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+    >
+      <view>dialog-toast</view>
+    </custom-button>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

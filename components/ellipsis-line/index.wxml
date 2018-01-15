@@ -1,0 +1,6 @@
+<view
+  class="ellipsis-line-wrap"
+  style="-webkit-line-clamp:{{line}}"
+>
+  <slot></slot>
+</view>

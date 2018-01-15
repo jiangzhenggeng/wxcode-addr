@@ -1,0 +1,16 @@
+<view class="countdown-wrap">
+  <countdown-group
+    interval="1000"
+  >
+    <view class="countdown-item">
+      <countdown
+        wx:for="{{countdownList}}"
+        wx:key="{{item}}"
+        endtime="{{item}}"
+        bind:end="end"
+        bind:run="run"
+        format="%dd天%hh小时%ii分钟%ss秒"
+      />
+    </view>
+  </countdown-group>
+</view>

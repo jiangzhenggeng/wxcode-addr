@@ -35,8 +35,8 @@ Component({
 		addrSelect: {
 			type: Array,
 			value: [],
-			observer: function (newVal, oldVal) {
-
+			observer: function () {
+				this._setInitSelect()
 			}
 		},
 		currentTab: {
@@ -47,25 +47,21 @@ Component({
 	data: {
 		addrList: []
 	},
-	created() {
-
-	},
-	attached() {
-		var addrSelect = this.data.addrSelect
-		var addrList = []
-		var tempResult, selectid
-
-		for (var i = 0; i < addrSelect.length || i == 0; i++) {
-			selectid = tempResult ? tempResult.selectid : 0
-			tempResult = getCurrentItemList(cityList, selectid, addrSelect[i])
-			addrList[i] = tempResult.list
-		}
-		this.setData({
-			addrList,
-			currentTab: addrList.length - 1
-		})
-	},
 	methods: {
+		_setInitSelect() {
+			var addrSelect = this.data.addrSelect
+			var addrList = []
+			var tempResult, selectid
+			for (var i = 0; i < addrSelect.length || i == 0; i++) {
+				selectid = tempResult ? tempResult.selectid : 0
+				tempResult = getCurrentItemList(cityList, selectid, addrSelect[i])
+				addrList[i] = tempResult.list
+			}
+			this.setData({
+				addrList,
+				currentTab: addrList.length - 1
+			})
+		},
 		open() {
 			this.setData({
 				show: true

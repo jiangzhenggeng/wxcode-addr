@@ -15,13 +15,6 @@ Component({
 			}
 		}
 	},
-	data: {},
-	created() {
-
-	},
-	attached() {
-
-	},
 	methods: {
 		click(e) {
 			this.triggerEvent('click', e)

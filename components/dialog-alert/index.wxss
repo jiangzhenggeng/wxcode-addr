@@ -1,142 +1,72 @@
-/*地址选择器*/
-.area2-select-wrap{
-  position: fixed;
+.dialog-alert-wrap {
   width: 100%;
   height: 100%;
-  top:0;
-  left:0;
-  color: #9D9D9D;
-  font-size: 28rpx;
-  z-index: -999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.area2-select-wrap .area2-select-mask{
-  transition: opacity 0.3s;
-  opacity: 0;
-}
-.area2-select-wrap .area2-select-inner{
-  transition: transform 0.3s;
-  transform: translate(0,100%);
-}
-.area2-select-wrap.show{
-  z-index: 9;
-}
-.area2-select-wrap.show .area2-select-mask{
-  opacity: 1;
-  z-index: 1;
-}
-.area2-select-wrap.show .area2-select-inner{
-  transform: translate(0,0%);
-  z-index: 2;
-}
-.area2-select-mask{
-  background-color: rgba(0,0,0,0.5);
-  width: 100%;
-  height: 100%;
-  z-index: -99999;
-  position: absolute;
-}
-.area2-select-inner{
-  height: 640rpx;
-  z-index: -99999;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  left: 0;
-  background-color: #fff;
+.dialog-alert-wrap .dialog-alert-inner {
+  background: #ffffff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 80%;
   display: flex;
   flex-direction: column;
-}
-.area2-select-header{
-  height: 120rpx;
-  line-height: 120rpx;
-  text-align: center;
-  position: relative;
-  font-size: 32rpx;
-  border-bottom: 1px solid #F3F3F3;
-}
-.area2-close-wrap{
-  width: 28rpx;
-  height: 28rpx;
-  position: absolute;
-  line-height: normal;
-  padding: 46rpx 44rpx;
-}
-.area2-close-icon{
-  width: 100%;
-  height: 100%;
-}
-
-.area2-sub-header{
-  height: 80rpx;
-  line-height: 80rpx;
-  border-bottom: 1px solid #F3F3F3;
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
-  flex-direction: row;
-  padding: 0 24rpx;
+  justify-content: center;
 }
-.area2-sub-item{
-  padding:0 20rpx;
-  position: relative;
-}
-.area2-sub-item::after{
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 6rpx;
-  bottom: 0;
-  left: 0;
-  background-color: #F34416;
-  display: none;
-}
-.area2-sub-item.on{
-  color: #F34416;
-}
-.area2-sub-item.on::after{
-  display: block;
-}
-.area2-item-wrap{
+.dialog-alert-wrap .dialog-alert-content {
   flex: 1;
-}
-.area2-swiper-box{
-  height: 436rpx;
-}
-
-
-.area2-swiper-inner{
-  padding: 10rpx 44rpx;
-}
-.area2-swiper-item{
-  height: 40px;
-  line-height: 40px;
+  width: 100%;
+  padding: 30rpx;
+  color: #333;
+  font-size: 28rpx;
+  min-height: 120rpx;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
-.area2-swiper-item.on{
-  color: #F34416;
-}
-.area2-swiper-areaname{
+.dialog-alert-wrap .dialog-loading-btn-wrap {
+  flex: 1;
+  width: 100%;
+  height: 85rpx;
+  color: #333;
+  font-size: 28rpx;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
   position: relative;
-  padding-right: 45px;
 }
-.area2-swiper-areaname::after{
-  content: '';
+.dialog-alert-wrap .dialog-loading-btn-wrap:after {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 0px;
-  top:50%;
-  margin-top: -10px;
-  line-height: normal;
-  display: none;
-  background-position: center center;
-  background-size: 10px auto;
-  background-repeat: no-repeat;
-  background-image: url(http://cdn.jiguo.com/static/WeiXin/images/center/area_gou.png);
-}
-.on .area2-swiper-areaname::after{
+  content: '';
   display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: #D8D8D8;
+}
+.dialog-alert-wrap .dialog-loading-btn-wrap .dialog-loading-btn {
+  min-width: 50%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.dialog-alert-wrap .dialog-loading-btn-wrap .dialog-loading-btn:nth-child(2n):after {
+  position: absolute;
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
 }

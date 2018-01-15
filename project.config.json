@@ -20,14 +20,29 @@
 			"current": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"game": {
 			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "对话框",
 					"pathName": "pages/dialog/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "scscs",
+					"pathName": "pages/components/countdown/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "dvsdvsd",
+					"pathName": "pages/components/dialog/index"
 				}
 			]
 		}

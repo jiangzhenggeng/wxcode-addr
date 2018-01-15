@@ -1,0 +1,20 @@
+.pullup-loading-wrap .pullup-loading-nodata,
+.pullup-loading-wrap .pullup-loading-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+.pullup-loading-wrap .pullup-loading-loading {
+  text-indent: -9999rpx;
+  color: #fe5341;
+  background-image: url(http://cdn.jiguo.com/static/WeiXin/images/footer_loading.svg);
+  background-size: 50rpx auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.pullup-loading-wrap .pullup-loading-nodata {
+  color: #666666;
+}

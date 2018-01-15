@@ -1,20 +1,11 @@
-
-
+import DialogBehavios from '../dialog-modal/dialog-behavior'
 
 Component({
+	behaviors: [DialogBehavios],
 	properties: {
-
-	},
-	data: {
-
-	},
-	created() {
-
-	},
-	attached() {
-
-	},
-	methods: {
-
+		message: {
+			type: String,
+			value: ''
+		}
 	}
 })

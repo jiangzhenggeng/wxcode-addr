@@ -1,13 +1,15 @@
 <view class="container">
   <addr-select
     bind:select="selectArea"
+    addrSelect="{{address?address:null}}"
   >
     <view class="select">点击我</view>
   </addr-select>
   <view class="value">
-    {{address[0]&&address[0].name}}-{{address[1]&&address[1].name}}-{{address[2]&&address[2].name}}
+    {{address[0]&&address[0].name}}-
+    {{address[1]&&address[1].name}}-
+    {{address[2]&&address[2].name}}
   </view>
-  <navigator class="select" url="../dialog/index">组件</navigator>
 </view>
 
 

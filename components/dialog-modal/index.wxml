@@ -1,18 +1,16 @@
-<view catch:tap="open">
-  <slot></slot>
-  <view class="area2-select-wrap {{show?'show':''}}">
-
+<view
+  wx:if="{{show}}"
+  class="dialog-modal-wrap"
+  catch:touchmove="_touchmove"
+  style="z-index:{{zIndex}}"
+>
+  <view
+    wx:if="{{animate}}"
+    class="dialog-modal-inner"
+  >
+    <slot></slot>
   </view>
+  <block wx:else>
+    <slot></slot>
+  </block>
 </view>
-
-
-
-
-
-
-
-
-
-
-
-

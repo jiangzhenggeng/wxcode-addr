@@ -1,0 +1,15 @@
+.back-top {
+  position: fixed;
+  z-index: 9;
+  right: 24rpx;
+  bottom: 24rpx;
+  width: 72rpx;
+  height: 72rpx;
+  overflow: hidden;
+  transition: transform 0.3s;
+  transform: translate(0, 0);
+}
+.back-top .image {
+  width: 100%;
+  height: 100%;
+}

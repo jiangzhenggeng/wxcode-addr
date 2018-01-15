@@ -1,0 +1,6 @@
+.container{
+  padding: 24rpx;
+}
+.ex-button{
+  margin-bottom: 20rpx;
+}

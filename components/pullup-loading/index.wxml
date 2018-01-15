@@ -1,0 +1,4 @@
+<view class="pullup-loading-wrap">
+  <view wx:if="{{no_data}}" class="pullup-loading-nodata">没有更多啦~</view>
+  <view wx:elif="{{loading}}" class="pullup-loading-loading"></view>
+</view>

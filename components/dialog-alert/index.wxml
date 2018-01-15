@@ -1,9 +1,42 @@
-<view catch:tap="open">
-  <slot></slot>
-  <view class="area2-select-wrap {{show?'show':''}}">
-
+<dialog-modal
+  show="{{show}}"
+  zIndex="{{zIndex}}"
+  animate="{{animate}}"
+>
+  <view class="dialog-alert-wrap">
+    <view class="dialog-alert-inner">
+      <view class="dialog-alert-content">
+        <block wx:if="{{message}}">{{message}}</block>
+        <block wx:else>
+          <slot name="message"></slot>
+        </block>
+      </view>
+      <view class="dialog-loading-btn-wrap">
+        <block wx:if="{{buttonOkText||buttonCancelText}}">
+          <view
+            wx:if="{{buttonCancelText}}"
+            catch:tap="_tapCancel"
+            class="dialog-loading-btn cancel"
+            style="{{buttonCancelStyle}}"
+            hover-class="hover-class"
+          >
+            {{buttonCancelText}}
+          </view>
+          <view
+            wx:if="{{buttonOkText}}"
+            catch:tap="_tapOk"
+            class="dialog-loading-btn ok"
+            style="{{buttonOkStyle}}"
+            hover-class="hover-class"
+          >
+            {{buttonOkText}}
+          </view>
+        </block>
+        <slot wx:else name="button"></slot>
+      </view>
+    </view>
   </view>
-</view>
+</dialog-modal>
 
 
 

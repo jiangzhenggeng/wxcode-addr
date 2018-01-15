@@ -1,0 +1,150 @@
+/*地址选择器*/
+.area-select-wrap {
+  width: 100%;
+
+  .area2-select-wrap {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    color: #9D9D9D;
+    font-size: 28 * 1rpx;
+    overflow: hidden;
+
+    &.show {
+      z-index: 9;
+      height: 100%;
+      .area2-select-mask {
+        opacity: 1;
+        z-index: 1;
+      }
+      .area2-select-inner {
+        transform: translate(0, 0%);
+        z-index: 2;
+      }
+    }
+  }
+
+  .area2-select-mask {
+    transition: opacity 0.3s;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: -99999;
+    position: absolute;
+  }
+
+  .area2-select-inner {
+    height: 640 * 1rpx;
+    z-index: -99999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    transform: translate(0, 100%);
+  }
+
+  .area2-select-header {
+    height: 120 * 1rpx;
+    line-height: 120 * 1rpx;
+    text-align: center;
+    position: relative;
+    font-size: 32 * 1rpx;
+    border-bottom: 1px solid #F3F3F3;
+    .area2-close-wrap {
+      width: 28 * 1rpx;
+      height: 28 * 1rpx;
+      position: absolute;
+      line-height: normal;
+      padding: 46 * 1rpx 44 * 1rpx;
+    }
+
+    .area2-close-icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .area2-sub-header {
+    height: 80 * 1rpx;
+    line-height: 80 * 1rpx;
+    border-bottom: 1px solid #F3F3F3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 24 * 1rpx;
+    .area2-sub-item {
+      padding: 0 20 * 1rpx;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 6 * 1rpx;
+        bottom: 0;
+        left: 0;
+        background-color: #F34416;
+        display: none;
+      }
+      &.on {
+        color: #F34416;
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .area2-item-wrap {
+    flex: 1;
+    .area2-swiper-box {
+      height: 436 * 1rpx;
+    }
+    .area2-swiper-inner {
+      padding: 10 * 1rpx 44 * 1rpx;
+    }
+
+    .area2-swiper-item {
+      height: 40px;
+      line-height: 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &.on {
+        color: #F34416;
+        .area2-swiper-areaname::after {
+          display: block;
+        }
+      }
+    }
+    .area2-swiper-areaname {
+      position: relative;
+      padding-right: 45px;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 0px;
+        top: 50%;
+        margin-top: -10px;
+        line-height: normal;
+        display: none;
+        background-position: center center;
+        background-size: 10px auto;
+        background-repeat: no-repeat;
+        background-image: url(http://cdn.jiguo.com/static/WeiXin/images/center/area_gou.png);
+      }
+    }
+  }
+}
+
