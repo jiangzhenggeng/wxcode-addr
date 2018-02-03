@@ -1,0 +1,38 @@
+.block-loading-wrap {
+  height: 60rpx;
+}
+.block-loading-wrap .spinner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-loading-wrap .spinner .rect {
+  background-color: grey;
+  height: 100%;
+  width: 8rpx;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+  margin: 0px 3rpx;
+}
+.block-loading-wrap .spinner .rect2 {
+  animation-delay: -1.1s;
+}
+.block-loading-wrap .spinner .rect3 {
+  animation-delay: -1s;
+}
+.block-loading-wrap .spinner .rect4 {
+  animation-delay: -0.9s;
+}
+.block-loading-wrap .spinner .rect5 {
+  animation-delay: -0.8s;
+}
+@keyframes stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}

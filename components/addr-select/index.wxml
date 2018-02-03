@@ -1,33 +1,33 @@
-<view catch:tap="open" class="area-select-wrap">
-  <slot></slot>
+<view class="area-select-wrap">
+  <view bind:tap="open"><slot></slot></view>
   <view class="area2-select-wrap {{show?'show':''}}">
-    <view class="area2-select-mask" catch:tap="close"/>
+    <view class="area2-select-mask" bind:tap="close"/>
     <view class="area2-select-inner">
       <view class="area2-select-header">
-        <view class="area2-close-wrap" catch:tap="close">
+        <view class="area2-close-wrap" bind:tap="close">
           <image class="area2-close-icon" src="http://cdn.jiguo.com/static/WeiXin/images/center/area_close.png"/>
         </view>
         <view>所在区域</view>
       </view>
       <view class="area2-sub-header">
-        <block wx:if="{{addrSelect.length}}">
+        <block wx:if="{{_addrSelect.length}}">
           <view
-            wx:for="{{addrSelect}}"
-            wx:for-item="addrSelectItem"
-            wx:for-index="addrSelectIndex"
-            wx:key="{{addrSelectItem.id}}"
-            class="area2-sub-item {{currentTab==addrSelectIndex?'on':''}}"
-            catch:tap="tapTabBar"
-            data-current-tab="{{addrSelectIndex}}"
+            wx:for="{{_addrSelect}}"
+            wx:for-item="_addrSelectItem"
+            wx:for-index="_addrSelectIndex"
+            wx:key="{{_addrSelectItem.id}}"
+            class="area2-sub-item {{currentTab==_addrSelectIndex?'on':''}}"
+            bind:tap="tapTabBar"
+            data-current-tab="{{_addrSelectIndex}}"
           >
-            {{addrSelectItem.name}}
+            {{_addrSelectItem.name}}
           </view>
         </block>
-        <block wx:if="{{addrSelect.length<addrList.length}}">
+        <block wx:if="{{_addrSelect.length<addrList.length}}">
           <view
             class="area2-sub-item {{currentTab>=addrList.length-1?'on':''}}"
-            catch:tap="tapTabBar"
-            data-current-tab="{{addrSelect.length}}"
+            bind:tap="tapTabBar"
+            data-current-tab="{{_addrSelect.length}}"
           >
             {{'请选择'}}
           </view>
@@ -38,7 +38,7 @@
           current="{{currentTab}}"
           class="area2-swiper-box"
           duration="300"
-          catch:change="swiperChange"
+          bind:change="swiperChange"
         >
           <swiper-item
             wx:for="{{addrList}}"
@@ -51,11 +51,11 @@
                 <view
                   wx:for="{{addrListItem}}"
                   wx:key="{{item.name}}"
-                  catch:tap="clickSelectArea"
+                  bind:tap="clickSelectArea"
                   data-item-name="{{item.name}}"
                   data-item-id="{{item.id}}"
                   data-current-tab="{{addrListIndex}}"
-                  class="area2-swiper-item {{item.name==addrSelect[addrListIndex].name?'on':''}}"
+                  class="area2-swiper-item {{item.name==_addrSelect[addrListIndex].name?'on':''}}"
                 >
                   <view class="area2-swiper-areaname">{{item.name}}</view>
                 </view>

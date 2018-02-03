@@ -1,0 +1,21 @@
+@mixin float() {
+  .fl {
+    float: left;
+  }
+  .fr {
+    float: right;
+  }
+  .nf {
+    float: none;
+  }
+  .clear {
+    &::before {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+  }
+
+}

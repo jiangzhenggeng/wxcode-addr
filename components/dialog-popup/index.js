@@ -7,6 +7,10 @@ Component({
 		close: {
 			type: Boolean,
 			value: true,
+		},
+		customStyle: {
+			type: String,
+			value: '',
 		}
 	},
 	methods: {

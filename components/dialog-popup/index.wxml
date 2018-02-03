@@ -4,11 +4,14 @@
   animate="{{animate}}"
 >
   <view class="dialog-popup-wrap">
-    <view class="modal-wrap-inner {{close?'has-close':''}}">
+    <view
+      class="modal-wrap-inner {{close?'has-close':''}}"
+      style="{{customStyle}}"
+    >
       <view
         wx:if="{{close}}"
-        class="modal-wrap-close"
-        catch:tap="_closeDialogPopup"
+        class="modal-wrap-close hover-class"
+        bind:tap="_closeDialogPopup"
       />
       <view class="modal-wrap-body">
         <slot></slot>

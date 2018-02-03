@@ -1,0 +1,36 @@
+@import "include";
+
+//字体
+@include ft(0, 0, 1);
+@include ft(12, 18, 2);
+@include ft(22, 30, 4);
+@include ft(36, 48, 6);
+
+//补白
+@include pd(0, 9, 1);
+@include pd(12, 12, 1);
+@include pd(10, 40, 5);
+
+//边距
+@include mg(0, 9, 1);
+@include mg(12, 12, 1);
+@include mg(10, 40, 5);
+
+//颜色
+@include color();
+
+//浮动
+@include float();
+
+@include flex();
+
+@include button();
+
+
+
+
+
+
+
+
+

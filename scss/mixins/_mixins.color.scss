@@ -1,0 +1,31 @@
+@mixin color() {
+  .blue {
+    color: #006d94;
+  }
+  .green {
+    color: #07B25F;
+  }
+  .red {
+    color: #F66039;
+  }
+  .gray, .gary {
+    color: #a3a3a3;
+  }
+  .colfff {
+    color: #fff;
+  }
+
+  .bg-red {
+    background-color: #dd3932;
+    color: #fff;
+  }
+
+  .bg-white {
+    background-color: #fff;
+  }
+
+  .delete{
+    text-decoration: line-through;
+  }
+
+}

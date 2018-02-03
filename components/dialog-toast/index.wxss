@@ -2,8 +2,13 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 150rpx;
   z-index: 99999;
+}
+.dialog-toast-wrap.bottom {
+  bottom: 150rpx;
+}
+.dialog-toast-wrap.top {
+  top: 150rpx;
 }
 .dialog-toast-wrap .dialog-toast-box {
   background: rgba(0, 0, 0, 0.7);
@@ -12,4 +17,16 @@
   text-align: center;
   padding: 15rpx 30rpx;
   border-radius: 5rpx;
+  animation: dialog-toast 0.3s;
+}
+@keyframes dialog-toast {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

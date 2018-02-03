@@ -1,0 +1,28 @@
+@mixin pd($num,$max:30,$step:2) {
+  @if $num <= $max {
+    .pd#{$num} {
+      padding: torpx($num * 2);
+    }
+    .pdtb#{$num} {
+      padding: torpx($num * 2) 0;
+    }
+    .pdlr#{$num} {
+      padding: 0 torpx($num * 2);
+    }
+    .pdl#{$num} {
+      padding-left: torpx($num * 2);
+    }
+    .pdt#{$num} {
+      padding-top: torpx($num * 2);
+    }
+    .pdr#{$num} {
+      padding-right: torpx($num * 2);
+    }
+    .pdb#{$num} {
+      padding-bottom: torpx($num * 2);
+    }
+    @if $num < $max {
+      @include pd($num + $step, $max, $step);
+    }
+  }
+}

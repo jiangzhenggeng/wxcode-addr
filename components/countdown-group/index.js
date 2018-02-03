@@ -12,18 +12,16 @@ Component({
 				if (!this.countdownArray) {
 					this.countdownArray = []
 				}
-				this.countdownArray.push(target)
-				this._runingLoop()
-				this.startAllBack()
+				if (target.run.call(target)) {
+					this.countdownArray.push(target)
+					this.startAllBack()
+				}
 			},
-			linkChanged(target) {
+			linkChanged() {
 				this.countdownArray = this.getRelationNodes('../countdown/index')
 			},
-			unlinked(target) {
-				var index = this.countdownArray.indexOf(target)
-				if (index > -1) {
-					this.countdownArray.splice(index, 1)
-				}
+			unlinked() {
+				this.countdownArray = this.getRelationNodes('../countdown/index')
 				if (!this.countdownArray.length) {
 					this.stopAllBack()
 				}
@@ -38,7 +36,7 @@ Component({
 	methods: {
 		startAllBack() {
 			if (this.countdownGroupRunStatus) return
-			this.countdownGroupRunStatus = this._runingAllCountdown()
+			this._runingAllCountdown()
 		},
 		stopAllBack() {
 			this.countdownGroupRunStatus &&
@@ -46,18 +44,25 @@ Component({
 			this.countdownGroupRunStatus = false
 		},
 		_runingAllCountdown() {
-			var setTimeoutId = setTimeout(() => {
+			this.countdownGroupRunStatus = setTimeout(() => {
 				this._runingLoop()
-				this._runingAllCountdown()
 			}, this.data.interval)
-			return setTimeoutId
 		},
 		_runingLoop() {
-			this.countdownArray.forEach((countdown, index) => {
-				if (!countdown.run.call(countdown)) {
-					this.countdownArray.splice(index, 1)
-				}
+			this.countdownArray = this.countdownArray.filter((countdown) => {
+				let result = countdown.run.call(countdown)
+				return result
 			})
+
+			this.triggerEvent('run')
+			if (this.countdownArray.length <= 0) {
+				setTimeout(() => {
+					this.stopAllBack()
+					this.triggerEvent('end')
+				}, this.data.interval)
+			}else{
+				this._runingAllCountdown()
+			}
 		}
 	}
 })

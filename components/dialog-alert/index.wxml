@@ -15,7 +15,7 @@
         <block wx:if="{{buttonOkText||buttonCancelText}}">
           <view
             wx:if="{{buttonCancelText}}"
-            catch:tap="_tapCancel"
+            bind:tap="_tapCancel"
             class="dialog-loading-btn cancel"
             style="{{buttonCancelStyle}}"
             hover-class="hover-class"
@@ -24,7 +24,7 @@
           </view>
           <view
             wx:if="{{buttonOkText}}"
-            catch:tap="_tapOk"
+            bind:tap="_tapOk"
             class="dialog-loading-btn ok"
             style="{{buttonOkStyle}}"
             hover-class="hover-class"

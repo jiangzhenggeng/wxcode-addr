@@ -1,0 +1,9 @@
+<view class="block-loading-wrap">
+  <view class="spinner">
+    <view class="rect rect1" style="background-color:{{color}}"></view>
+    <view class="rect rect2" style="background-color:{{color}}"></view>
+    <view class="rect rect3" style="background-color:{{color}}"></view>
+    <view class="rect rect4" style="background-color:{{color}}"></view>
+    <view class="rect rect5" style="background-color:{{color}}"></view>
+  </view>
+</view>

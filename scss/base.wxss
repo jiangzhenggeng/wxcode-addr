@@ -1,0 +1,3 @@
+@import '/scss/app.wxss'; temp {
+  width: 0;
+}

@@ -27,10 +27,7 @@ Component({
 	properties: {
 		show: {
 			type: Boolean,
-			value: false,
-			observer: function (newVal, oldVal) {
-
-			}
+			value: false
 		},
 		addrSelect: {
 			type: Array,
@@ -45,13 +42,25 @@ Component({
 		}
 	},
 	data: {
-		addrList: []
+		addrList: [],
+		_addrSelect: []
+	},
+	ready(){
+		this._setInitSelect()
 	},
 	methods: {
 		_setInitSelect() {
 			var addrSelect = this.data.addrSelect
 			var addrList = []
 			var tempResult, selectid
+
+			addrSelect = addrSelect.filter((item) => {
+				if (item.name) {
+					return true
+				}
+				return false
+			})
+
 			for (var i = 0; i < addrSelect.length || i == 0; i++) {
 				selectid = tempResult ? tempResult.selectid : 0
 				tempResult = getCurrentItemList(cityList, selectid, addrSelect[i])
@@ -59,6 +68,7 @@ Component({
 			}
 			this.setData({
 				addrList,
+				_addrSelect: addrSelect,
 				currentTab: addrList.length - 1
 			})
 		},
@@ -89,14 +99,14 @@ Component({
 			var dataset = e.currentTarget.dataset
 			var currentTab = dataset.currentTab
 			var nextTab = currentTab + 1
-			var addrSelect = this.data.addrSelect
+			var _addrSelect = this.data._addrSelect
 			var addrList = this.data.addrList
 			//已选择地址
-			addrSelect[currentTab] = {
+			_addrSelect[currentTab] = {
 				name: dataset.itemName,
 				id: dataset.itemId
 			}
-			addrSelect.splice(currentTab + 1)
+			_addrSelect.splice(currentTab + 1)
 			var nextItemList = getCurrentItemList(cityList, dataset.itemId)
 			if (nextItemList.list.length) {
 				addrList[nextTab] = nextItemList.list
@@ -104,12 +114,12 @@ Component({
 			addrList.splice(nextTab + 1)
 
 			this.setData({
-				addrSelect,
+				_addrSelect,
 				addrList,
 				currentTab: currentTab >= addrList.length - 1 ? currentTab : currentTab + 1
 			}, () => {
 				if (currentTab >= addrList.length - 1) {
-					this.triggerEvent('select', this.data.addrSelect)
+					this.triggerEvent('select', this.data._addrSelect)
 					this.close()
 				}
 			})

@@ -1,5 +1,5 @@
 <view
-  catch:tap="clickScrollTop"
+  bind:tap="clickScrollTop"
   class="back-top"
   style="{{customStyle}}"
 >

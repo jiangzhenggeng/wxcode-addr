@@ -1,5 +1,5 @@
 <view
-  catch:tap="click"
+  bind:tap="click"
   class="{{className}}"
   hover-class="hover-class"
 >

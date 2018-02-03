@@ -11,7 +11,11 @@ export default Behavior({
 		animate: {
 			type: Boolean,
 			value: true
-		}
+		},
+		message: {
+			type: String,
+			value: ''
+		},
 	},
 	methods: {
 		show() {
@@ -19,12 +23,26 @@ export default Behavior({
 				show: true
 			})
 			this.triggerEvent('show')
+			return this
 		},
 		close() {
 			this.setData({
 				show: false
 			})
 			this.triggerEvent('close')
+			return this
+		},
+		message(message) {
+			this.setData({
+				message
+			})
+			return this
+		},
+		animate() {
+			this.setData({
+				animate: true
+			})
+			return this
 		}
 	}
 })

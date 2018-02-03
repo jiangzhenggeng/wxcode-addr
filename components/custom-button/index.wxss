@@ -1,3 +1,6 @@
+@import '/scss/app.wxss'; temp {
+  width: 0;
+}
 .button {
   border-radius: 5rpx;
   display: flex;

@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/components/addr-select/index",
     "pages/components/countdown/index",
-    "pages/components/dialog/index"
+    "pages/components/dialog-alert/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",

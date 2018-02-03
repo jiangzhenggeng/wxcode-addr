@@ -1,0 +1,104 @@
+@mixin _tpos-scsc_() {
+  .ftb {
+    font-weight: bold;
+  }
+  .ft-ultra-light {
+    font-weight: 100;
+  }
+  .ft-thin {
+    font-weight: 200;
+  }
+  .ft-light {
+    font-weight: 300;
+  }
+  .ft-regular {
+    font-weight: 400;
+  }
+  .ft-medium {
+    font-weight: 500;
+  }
+  .ft-semi {
+    font-weight: 600;
+  }
+  .ftb {
+    font-weight: bold;
+  }
+
+  .ft100 {
+    font-weight: 100;
+  }
+  .ft200 {
+    font-weight: 200;
+  }
+  .ft400 {
+    font-weight: 400;
+  }
+  .ft600 {
+    font-weight: 600;
+  }
+
+  .cp {
+    cursor: pointer;
+  }
+
+  .tc {
+    text-align: center;
+  }
+
+  .tl {
+    text-align: left;
+  }
+
+  .tr {
+    text-align: right;
+  }
+
+}
+
+$_tpos-scsc-init_: 1;
+@mixin ft($size,$max:30,$step:2) {
+  @if $size <= $max {
+    .ft#{$size} {
+      font-size: torpx($size * 2);
+    }
+    @include ft($size + $step, $max, $step);
+  } @else if $_tpos-scsc-init_==1 {
+    @include _tpos-scsc_()
+  }
+  $_tpos-scsc-init_: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

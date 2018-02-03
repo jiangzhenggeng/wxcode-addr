@@ -6,10 +6,6 @@ Component({
 		multipleSlots: true
 	},
 	properties: {
-		message: {
-			type: String,
-			value: ''
-		},
 		buttonOkText: {
 			type: String,
 			value: ''
@@ -35,6 +31,30 @@ Component({
 		_tapOk() {
 			this.triggerEvent('ok')
 			this.close()
+		},
+		okText(buttonOkText){
+			this.setData({
+				buttonOkText
+			})
+			return this
+		},
+		okStyle(buttonOkStyle){
+			this.setData({
+				buttonOkStyle
+			})
+			return this
+		},
+		cancelText(buttonCancelText){
+			this.setData({
+				buttonCancelText
+			})
+			return this
+		},
+		cancelStyle(buttonCancelStyle){
+			this.setData({
+				buttonCancelStyle
+			})
+			return this
 		}
 	}
 })

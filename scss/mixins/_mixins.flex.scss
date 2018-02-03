@@ -1,0 +1,18 @@
+@mixin flex() {
+  .flex {
+    display: flex;
+  }
+  .center {
+    align-items: center;
+    justify-content: center;
+  }
+  .stretch {
+    align-items: stretch;
+  }
+  .start {
+    align-items: flex-start;
+  }
+  .end {
+    align-items: flex-end;
+  }
+}

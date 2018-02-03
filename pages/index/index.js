@@ -10,8 +10,8 @@ Page({
 				path: '/pages/components/countdown/index'
 			},
 			{
-				name: '对话框',
-				path: '/pages/components/dialog/index'
+				name: '对话框(alert)',
+				path: '/pages/components/dialog-alert/index'
 			}
 		]
 	}

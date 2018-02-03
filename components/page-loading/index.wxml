@@ -1,4 +1,6 @@
-<view class="page-loading-wrap {{background?'background':''}}" wx:if="{{show}}">
-  <slot wx:if="{{custom}}"></slot>
-  <image wx:else class="image" src="./page-loading.svg"></image>
-</view>
+<collect-fromid>
+  <view class="page-loading-wrap {{background?'background':''}}" wx:if="{{show}}">
+    <slot wx:if="{{custom}}"></slot>
+    <image wx:else class="image" src="./page-loading.svg"></image>
+  </view>
+</collect-fromid>

@@ -1,3 +1,6 @@
+import ParseTime from './parse-time'
+import FormatTime from './format-time'
+
 Component({
 	properties: {
 		endtime: {
@@ -5,7 +8,7 @@ Component({
 		},
 		format: {
 			type: String,
-			value: '%dd天%hh小时%ii分钟%ss秒'
+			value: '%dd天%hh小时%ii分%ss秒'
 		},
 		key: {
 			type: String,
@@ -14,6 +17,14 @@ Component({
 		interval: {
 			type: Number,
 			value: 1000
+		},
+		formatType: {
+			type: Number,
+			value: 1
+		},
+		return: {
+			type: Boolean,
+			value: true
 		}
 	},
 	relations: {
@@ -22,81 +33,79 @@ Component({
 		}
 	},
 	methods: {
-		_parseTime() {
-			if (this._endtime) {
-				return this._endtime
-			}
-			let endtime = this.data.endtime
-			let _end = new Date().getTime()
-
-			if (endtime.indexOf(' ') > -1) {
-				_end = new Date(endtime).getTime()
-			} else if (endtime.length <= 9) {
-				let newTime = new Date().getTime()
-				_end = newTime + endtime * 1000
-			} else {
-				_end = endtime
-			}
-			this._endtime = _end
-			return this._endtime
-		},
 		run() {
 			var newTime = new Date().getTime()
 			var endTime = this._parseTime()
 
-			var timeNumber = Math.ceil((endTime - newTime) / 1000)
-			var result = timeNumber >= 0 ? true : false
+			var timeNumber = Math.floor((endTime - newTime) / 1000)
+			var _timeNumber = timeNumber >= 0 ? timeNumber : 0
 
-			let newFormatTime = this._formatTime(timeNumber)
-
+			let countdownTime = this._formatTime(_timeNumber)
 			this.setData({
-				time: this._formatTime(timeNumber)
+				countdownTime
 			})
 
 			let rData = {
 				key: this.data.key,
 				endTime,
-				newFormatTime,
+				countdownTime,
 				format: this.changeFormat,
 				time: timeNumber,
+				_time: _timeNumber,
 				run: true,
 				end: false
 			}
-
-			this.triggerEvent('run', rData)
-			if (!result) {
+			if (timeNumber >= 0) {
+				rData.run = true
+				rData.end = false
+				this.triggerEvent('run', rData)
+				return true
+			} else {
+				rData.run = false
 				rData.end = true
 				this.triggerEvent('end', rData)
+				return false
 			}
-			return result
+		},
+
+		_parseTime() {
+			if (this._endtime) {
+				return this._endtime
+			}
+			this._endtime = ParseTime(this.data.endtime)
+			return this._endtime
 		},
 		_formatTime(intDiff) {
-			var day = 0
-			var hour = 0
-			var minute = 0
-			var second = 0
-
-			if (intDiff > 0) {
-				day = Math.floor(intDiff / (60 * 60 * 24))
-				hour = Math.floor(intDiff / (60 * 60)) - (day * 24)
-				minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60)
-				second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60)
-			}
-			if (minute <= 9) minute = '' + minute
-			if (second <= 9) second = '' + second
+			let format_time = FormatTime(intDiff)
+			let day = format_time.day
+			let hour = format_time.hour
+			let minute = format_time.minute
+			let second = format_time.second
 
 			let changeFormat = this.data.format
 
-			// if (day > 0) {
-			// 	changeFormat = '%dd天后'
-			// }
-			// else if (hour > 0) {
-			// 	changeFormat = '%hh小时后'
-			// } else if (intDiff > 180) {
-			// 	changeFormat = '%ii分钟后'
-			// } else {
-			// 	changeFormat = '%ss秒后'
-			// }
+			if (this.data.formatType == 1) {
+				if (day > 0) {
+					changeFormat = '%dd天后'
+				} else if (hour > 0) {
+					changeFormat = '%hh小时后'
+				} else if (intDiff > 180) {
+					changeFormat = '%ii分钟后'
+				} else {
+					changeFormat = '%ss秒后'
+					second = intDiff
+				}
+			} else if (this.data.formatType == 2) {
+				if (day > 0) {
+					changeFormat = '%dd天%hh小时%ii分%ss秒'
+				} else if (hour > 0) {
+					changeFormat = '%hh小时%ii分%ss秒'
+				} else if (minute > 0) {
+					changeFormat = '%ii分%ss秒'
+				} else {
+					changeFormat = '%ss秒'
+				}
+			}
 
 			this.changeFormat = changeFormat
 
