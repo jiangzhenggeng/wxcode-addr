@@ -32,7 +32,7 @@ Component({
 		addrSelect: {
 			type: Array,
 			value: [],
-			observer: function () {
+			observer() {
 				this._setInitSelect()
 			}
 		},
@@ -45,7 +45,7 @@ Component({
 		addrList: [],
 		_addrSelect: []
 	},
-	ready(){
+	ready() {
 		this._setInitSelect()
 	},
 	methods: {
@@ -53,22 +53,31 @@ Component({
 			var addrSelect = this.data.addrSelect
 			var addrList = []
 			var tempResult, selectid
-
+			var hasFixGh = true
 			addrSelect = addrSelect.filter((item) => {
-				if (item.name) {
+				if (item.name && hasFixGh) {
 					return true
 				}
+				hasFixGh = false
 				return false
+			}).map((item) => {
+				item.name = (item.name + '').replace(/^\s+|\s+$/g, '')
+				return item
 			})
 
+			let _addrSelect = []
 			for (var i = 0; i < addrSelect.length || i == 0; i++) {
 				selectid = tempResult ? tempResult.selectid : 0
 				tempResult = getCurrentItemList(cityList, selectid, addrSelect[i])
 				addrList[i] = tempResult.list
+				if (tempResult.selectid) {
+					_addrSelect.push(addrSelect[i])
+				}
 			}
+
 			this.setData({
 				addrList,
-				_addrSelect: addrSelect,
+				_addrSelect,
 				currentTab: addrList.length - 1
 			})
 		},

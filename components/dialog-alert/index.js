@@ -32,25 +32,25 @@ Component({
 			this.triggerEvent('ok')
 			this.close()
 		},
-		okText(buttonOkText){
+		okText(buttonOkText) {
 			this.setData({
 				buttonOkText
 			})
 			return this
 		},
-		okStyle(buttonOkStyle){
+		okStyle(buttonOkStyle) {
 			this.setData({
 				buttonOkStyle
 			})
 			return this
 		},
-		cancelText(buttonCancelText){
+		cancelText(buttonCancelText) {
 			this.setData({
 				buttonCancelText
 			})
 			return this
 		},
-		cancelStyle(buttonCancelStyle){
+		cancelStyle(buttonCancelStyle) {
 			this.setData({
 				buttonCancelStyle
 			})

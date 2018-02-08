@@ -1,6 +1,21 @@
-.container{
+.container {
   padding: 24rpx;
 }
-.ex-button{
+.ex-button {
   margin-bottom: 20rpx;
+}
+.flex {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+}
+.flex .flex-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex .flex-item:last-child {
+  border-left: 1px solid #ccc;
 }

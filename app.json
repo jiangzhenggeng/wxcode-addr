@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/components/addr-select/index",
     "pages/components/countdown/index",
+    "pages/components/back-top/index",
     "pages/components/dialog-alert/index"
   ],
   "window": {

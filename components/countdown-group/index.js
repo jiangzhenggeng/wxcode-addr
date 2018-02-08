@@ -60,7 +60,7 @@ Component({
 					this.stopAllBack()
 					this.triggerEvent('end')
 				}, this.data.interval)
-			}else{
+			} else {
 				this._runingAllCountdown()
 			}
 		}

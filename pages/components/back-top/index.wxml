@@ -1,0 +1,21 @@
+<view class="container">
+
+  <view wx:for="{{arr}}" wx:key="{{item}}">
+    {{item}}
+  </view>
+</view>
+<back-top />
+
+
+
+
+
+
+
+
+
+
+
+
+
+

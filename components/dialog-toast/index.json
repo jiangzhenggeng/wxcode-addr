@@ -1,3 +1,6 @@
 {
-    "component": true
+  "component": true,
+  "usingComponents": {
+    "ellipsis-line": "/components/ellipsis-line/index"
+  }
 }

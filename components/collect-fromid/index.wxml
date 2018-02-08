@@ -1,0 +1,12 @@
+<form
+  class="collect-fromid-form"
+  report-submit="{{true}}"
+  bindsubmit="collectFromid"
+>
+  <button
+    formType="submit"
+    class="collect-fromid-btn"
+  >
+    <slot></slot>
+  </button>
+</form>

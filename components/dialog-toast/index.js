@@ -3,14 +3,15 @@ Component({
 		show: {
 			type: Boolean,
 			value: false,
-			observer: function (newVal) {
+			observer(newVal) {
 				if (newVal) {
-					setTimeout(() => {
+					this.setTimeoutHandler && clearTimeout(this.setTimeoutHandler)
+					this.setTimeoutHandler = setTimeout(() => {
 						this.setData({
 							show: false
-						},()=>{
-							this._callBack && this._callBack.call(this)
-							this._callBack && delete this._callBack
+						}, () => {
+							this._callback && this._callback.call(this)
+							this._callback && delete this._callback
 						})
 					}, this.data.time)
 				}
@@ -23,6 +24,10 @@ Component({
 		time: {
 			type: Number,
 			value: 5000
+		},
+		size: {
+			type: String,
+			value: 'small'
 		},
 		position: {
 			type: String,
@@ -48,23 +53,47 @@ Component({
 			this.setData({
 				message
 			})
+			this.data.message = message
 			return this
 		},
 		time(time) {
 			this.setData({
 				time
 			})
+			this.data.time = time
+			return this
+		},
+		size(size) {
+			this.setData({
+				size
+			})
+			this.data.size = size
+			return this
+		},
+		icon(icon) {
+			this.setData({
+				icon
+			})
+			this.data.icon = icon
+			return this
+		},
+		mask(mask) {
+			this.setData({
+				mask
+			})
+			this.data.mask = mask
 			return this
 		},
 		position(position) {
 			this.setData({
 				position
 			})
+			this.data.position = position
 			return this
 		},
-		callBack(callBack){
-			this._callBack = callBack || function () {
-				
+		callback(callback) {
+			this._callback = callback || function () {
+
 			}
 			return this
 		}

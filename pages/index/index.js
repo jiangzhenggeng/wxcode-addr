@@ -12,6 +12,10 @@ Page({
 			{
 				name: '对话框(alert)',
 				path: '/pages/components/dialog-alert/index'
+			},
+			{
+				name: '快捷返回顶部',
+				path: '/pages/components/back-top/index'
 			}
 		]
 	}

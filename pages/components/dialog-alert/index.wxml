@@ -4,20 +4,52 @@
     <custom-button
       className="button gray larg"
       class="ex-button"
-      bind:click="showDialogAlertClick"
+      bind:click="showDialogAlertClickBase"
     >
-      <view>dialog-alert</view>
+      <view>基础使用</view>
     </custom-button>
     <dialog-alert
       id="dialog-alert"
       buttonCancelText="cancel"
-      buttonCancelStyle="color:#FF5E4E"
+      buttonCancelStyle="color:#999"
       buttonOkText="ok"
       buttonOkStyle="color:#FF5E4E"
-    >
-      <view slot="message">弹窗内容</view>
-    </dialog-alert>
+      message="弹窗内容"
+      bind:cancel="cancel"
+      bind:ok="ok"
+    />
   </view>
+
+  <view class="ex-button">
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+      bind:click="showDialogAlertClickCustomBtn"
+    >
+      <view>自定义按钮（属性的优先级高于slot）</view>
+    </custom-button>
+    <dialog-alert id="dialog-alert-custom-btn">
+      <view slot="message">弹窗内容</view>
+      <view slot="button" class="flex">
+        <view bind:tap="cancelCustom" class="flex-item">取消</view>
+        <view bind:tap="okCustom" class="flex-item">确定</view>
+      </view>
+    </dialog-alert>
+
+  </view>
+
+  <view class="ex-button">
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+      bind:click="showDialogAlertClickFreeBtn"
+    >
+      <view>自由使用</view>
+    </custom-button>
+    <dialog-alert id="dialog-alert-free-btn" />
+
+  </view>
+
 </view>
 
 

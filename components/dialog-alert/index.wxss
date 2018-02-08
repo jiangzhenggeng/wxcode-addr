@@ -1,6 +1,10 @@
 @import '/scss/app.wxss'; temp {
   width: 0;
 }
+.hover-class {
+  opacity: 0.8;
+  background: #f1f1f1;
+}
 .dialog-alert-wrap {
   width: 100%;
   height: 100%;
