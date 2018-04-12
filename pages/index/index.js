@@ -28,6 +28,10 @@ Page({
 			{
 				name: '多行文字显示省略号',
 				path: '/pages/components/ellipsis-line/index'
+			},
+			{
+				name: '图片预加载组件',
+				path: '/pages/components/load-image/index'
 			}
 		]
 	}

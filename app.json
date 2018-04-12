@@ -7,6 +7,7 @@
     "pages/components/back-top/index",
     "pages/components/dialog-alert/index",
     "pages/components/dialog-toast/index",
+    "pages/components/load-image/index",
     "pages/components/ellipsis-line/index"
   ],
   "window": {

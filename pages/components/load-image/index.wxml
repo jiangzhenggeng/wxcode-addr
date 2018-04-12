@@ -1,0 +1,23 @@
+<app-container>
+
+  <view class="">
+    <load-image>
+      <iamge />
+    </load-image>
+  </view>
+
+</app-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
