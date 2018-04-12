@@ -1,0 +1,24 @@
+{
+  "navigationBarTitleText": "action-sheet组件",
+  "backgroundColor": "#F0F0F0",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "action-sheet": "/components/action-sheet/index",
+    "addr-select": "/components/addr-select/index",
+    "back-top": "/components/back-top/index",
+    "countdown": "/components/countdown/index",
+    "countdown-group": "/components/countdown-group/index",
+    "custom-button": "/components/custom-button/index",
+    "dialog-loading": "/components/dialog-loading/index",
+    "dialog-modal": "/components/dialog-modal/index",
+    "dialog-alert": "/components/dialog-alert/index",
+    "dialog-popup": "/components/dialog-popup/index",
+    "dialog-toast": "/components/dialog-toast/index",
+    "ellipsis-line": "/components/ellipsis-line/index",
+    "page-loading": "/components/page-loading/index",
+    "pullup-loading": "/components/pullup-loading/index",
+
+    "app-container": "/app-components/app-container/index",
+    "app-ex-button": "/app-components/app-ex-button/index"
+  }
+}

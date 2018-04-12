@@ -1,0 +1,72 @@
+.share-bottom-wrap-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  &.isIponeX{
+    .share-bottom-btn{
+      height: 100 + 20 * 1rpx;
+      line-height: 100 + 20 * 1rpx;
+      padding-bottom: 34 * 1rpx;
+    }
+  }
+  .share-bottom-mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation: share-bottom-mask .3s forwards;
+  }
+}
+
+.share-bottom-wrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 34 * 1rpx;
+  text-align: center;
+  line-height: 100 * 1rpx;
+  background: #F2F2F2;
+  animation: share-bottom-wrap .3s forwards;
+
+  .share-bottom-box {
+    background: #fff;
+    margin-bottom: 20 * 1rpx;
+  }
+  .share-bottom-btn {
+    background: #fff;
+    height: 100 * 1rpx;
+  }
+  .button-share {
+    background: #fff;
+    font-size: 34 * 1rpx;
+    font-weight: normal;
+    &:after,
+    &:before {
+      display: none;
+    }
+  }
+}
+
+
+@keyframes share-bottom-wrap {
+  0% {
+    transform: translateY(100%)
+  }
+  100% {
+    transform: translateY(0%)
+  }
+}
+@keyframes share-bottom-mask {
+  0% {
+    background: rgba(0,0,0,0);
+  }
+  100% {
+    background: rgba(0,0,0,0.3);
+  }
+}
+

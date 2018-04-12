@@ -2,3 +2,4 @@
   <text>{{countdownTime}}</text>
   <slot></slot>
 </view>
+<slot wx:else></slot>

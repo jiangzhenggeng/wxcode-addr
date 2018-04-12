@@ -37,7 +37,7 @@ Component({
 			var newTime = new Date().getTime()
 			var endTime = this._parseTime()
 
-			var timeNumber = Math.floor((endTime - newTime) / 1000)
+			var timeNumber = Math.round((endTime - newTime) / 1000)
 			var _timeNumber = timeNumber >= 0 ? timeNumber : 0
 
 			let countdownTime = this._formatTime(_timeNumber)
@@ -76,7 +76,7 @@ Component({
 			return this._endtime
 		},
 		_formatTime(intDiff) {
-			let format_time = FormatTime(intDiff)
+			let format_time = FormatTime(intDiff, 1)
 			let day = format_time.day
 			let hour = format_time.hour
 			let minute = format_time.minute

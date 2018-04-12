@@ -1,6 +1,9 @@
 <view class="countdown-wrap">
   <countdown-group
     interval="1000"
+    bind:end="endGroup"
+    bind:run="runGroup"
+    id="countdown-group"
   >
     <view
       wx:for="{{countdownList}}"

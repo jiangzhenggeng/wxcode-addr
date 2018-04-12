@@ -1,0 +1,115 @@
+<app-container>
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastBaseClick"
+    >
+      <view>基础使用</view>
+    </custom-button>
+    <dialog-toast
+      id="dialog-toast-base"
+      show="{{ dialogToastBaseStatus }}"
+      message="Toast内容"
+      time="3000"
+      size="small"
+      position="bottom"
+      icon=""
+    />
+  </app-ex-button>
+
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClick"
+    >
+      <view>API方式使用</view>
+    </custom-button>
+  </app-ex-button>
+
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClickTop"
+    >
+      <view>显示在顶部</view>
+    </custom-button>
+  </app-ex-button>
+
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClickBottom"
+    >
+      <view>显示在底部</view>
+    </custom-button>
+  </app-ex-button>
+
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClickCenter"
+    >
+      <view>显示在中间</view>
+    </custom-button>
+  </app-ex-button>
+
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClickLoading"
+    >
+      <view>loading图标</view>
+    </custom-button>
+  </app-ex-button>
+
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClickWarn"
+    >
+      <view>warm图标</view>
+    </custom-button>
+  </app-ex-button>
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClickNetwork"
+    >
+      <view>网络图标</view>
+    </custom-button>
+  </app-ex-button>
+
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      bind:click="dialogToastApiClickSouck"
+    >
+      <view>是否可以点击穿透</view>
+    </custom-button>
+  </app-ex-button>
+
+</app-container>
+
+<dialog-toast id="dialog-toast-api"/>
+<dialog-alert id="dialog-alert"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

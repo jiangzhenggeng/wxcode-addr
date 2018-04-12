@@ -1,7 +1,7 @@
 <view
   wx:if="{{show}}"
   class="dialog-modal-wrap"
-  bind:touchmove="_touchmove"
+  catch:touchmove="_touchmove"
   style="z-index:{{zIndex}}"
 >
   <view

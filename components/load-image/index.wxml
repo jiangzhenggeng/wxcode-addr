@@ -1,0 +1,17 @@
+<slot
+  wx:if="{{ imageLoading || !src }}"
+/>
+<view wx:else class="image-loading-bg-wrap">
+  <image
+    src="./load-image-type-{{type}}.png"
+    class="image-load-cover"
+    mode="aspectFit"
+  />
+  <image
+    class="image-load-component"
+    src="{{ src }}"
+    bindload="imgOnLoad"
+    binderror="imgOnLoadError"
+  />
+</view>
+

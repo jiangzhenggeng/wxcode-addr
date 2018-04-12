@@ -1,0 +1,3 @@
+<view class="ex-button">
+  <slot></slot>
+</view>

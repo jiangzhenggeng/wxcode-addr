@@ -1,15 +1,37 @@
 <view class="container">
-  <addr-select
-    bind:select="selectArea"
-    addrSelect="{{address?address:null}}"
-  >
-    <view class="select">点击我</view>
+  <addr-select bind:select="selectArea">
+    <view class="select">点击我选择地址</view>
   </addr-select>
   <view class="value">
     {{address[0]&&address[0].name}}-
     {{address[1]&&address[1].name}}-
     {{address[2]&&address[2].name}}
   </view>
+
+  <addr-select
+    bind:select="selectArea2"
+    addrSelect="{{address2}}"
+  >
+    <view class="select">我有默认值</view>
+  </addr-select>
+  <view class="value">
+    {{address2[0]&&address2[0].name}}-
+    {{address2[1]&&address2[1].name}}-
+    {{address2[2]&&address2[2].name}}
+  </view>
+
+  <addr-select
+    bind:select="selectAreaId"
+    addrSelect="{{addressId}}"
+  >
+    <view class="select">使用ID匹配</view>
+  </addr-select>
+  <view class="value">
+    {{addressId[0]&&addressId[0].name}}-
+    {{addressId[1]&&addressId[1].name}}-
+    {{addressId[2]&&addressId[2].name}}
+  </view>
+
 </view>
 
 

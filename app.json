@@ -2,13 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/components/addr-select/index",
+    "pages/components/action-sheet/index",
     "pages/components/countdown/index",
     "pages/components/back-top/index",
-    "pages/components/dialog-alert/index"
+    "pages/components/dialog-alert/index",
+    "pages/components/dialog-toast/index",
+    "pages/components/ellipsis-line/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "自定义组件",
+    "navigationBarTitleText": "极果试用小程序UI库",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#f0f0f0"
   },

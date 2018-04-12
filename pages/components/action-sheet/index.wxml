@@ -1,0 +1,33 @@
+<app-container>
+  <app-ex-button>
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+      bind:click="showActionSheet"
+    >
+      <view>基础使用</view>
+    </custom-button>
+  </app-ex-button>
+</app-container>
+
+<dialog-alert id="dialog-alert"/>
+<dialog-toast id="dialog-toast"/>
+
+<action-sheet id="show-action-sheet" class="show-action-sheet-wrap">
+  <view class="share-bottom-item" bind:tap="bind1">在线客服</view>
+  <view class="share-bottom-item" bind:tap="bind2">拨打400客服热线</view>
+</action-sheet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

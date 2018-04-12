@@ -1,0 +1,51 @@
+<app-container>
+  <view class="ellipsis-line-wrap">
+    <ellipsis-line>
+      <view>
+        由极果联合淘宝头条推出的TOP体验师大盘点新鲜出炉啦！这份盘点清单汇集了40位行业资深评论人和高端玩家、骨灰级收藏爱好者、酷玩圈超级大V。创立论坛、开办杂志、出版书籍......他们活跃在各种国际展会，掌控着行业论坛运营，甚至有过十数年的潜心研究和测评。
+      </view>
+    </ellipsis-line>
+  </view>
+  <view class="ellipsis-line-wrap">
+    <ellipsis-line line="2">
+      <view>
+        由极果联合淘宝头条推出的TOP体验师大盘点新鲜出炉啦！这份盘点清单汇集了40位行业资深评论人和高端玩家、骨灰级收藏爱好者、酷玩圈超级大V。创立论坛、开办杂志、出版书籍......他们活跃在各种国际展会，掌控着行业论坛运营，甚至有过十数年的潜心研究和测评。
+      </view>
+    </ellipsis-line>
+  </view>
+  <view class="ellipsis-line-wrap">
+    <ellipsis-line line="3">
+      <view>
+        由极果联合淘宝头条推出的TOP体验师大盘点新鲜出炉啦！这份盘点清单汇集了40位行业资深评论人和高端玩家、骨灰级收藏爱好者、酷玩圈超级大V。创立论坛、开办杂志、出版书籍......他们活跃在各种国际展会，掌控着行业论坛运营，甚至有过十数年的潜心研究和测评。
+      </view>
+    </ellipsis-line>
+  </view>
+  <view class="ellipsis-line-wrap">
+    <ellipsis-line line="4">
+      <view>
+        由极果联合淘宝头条推出的TOP体验师大盘点新鲜出炉啦！这份盘点清单汇集了40位行业资深评论人和高端玩家、骨灰级收藏爱好者、酷玩圈超级大V。创立论坛、开办杂志、出版书籍......他们活跃在各种国际展会，掌控着行业论坛运营，甚至有过十数年的潜心研究和测评。
+      </view>
+    </ellipsis-line>
+  </view>
+  <view class="ellipsis-line-wrap">
+    <ellipsis-line line="5">
+      <view>
+        由极果联合淘宝头条推出的TOP体验师大盘点新鲜出炉啦！这份盘点清单汇集了40位行业资深评论人和高端玩家、骨灰级收藏爱好者、酷玩圈超级大V。创立论坛、开办杂志、出版书籍......他们活跃在各种国际展会，掌控着行业论坛运营，甚至有过十数年的潜心研究和测评。
+      </view>
+    </ellipsis-line>
+  </view>
+</app-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

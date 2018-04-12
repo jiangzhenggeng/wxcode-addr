@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "地址选择器",
+  "navigationBarTitleText": "极果试用小程序UI库",
   "backgroundColor": "#F0F0F0",
   "enablePullDownRefresh": false,
   "usingComponents": {
@@ -14,6 +14,9 @@
     "dialog-toast": "/components/dialog-toast/index",
     "ellipsis-line": "/components/ellipsis-line/index",
     "page-loading": "/components/page-loading/index",
-    "pullup-loading": "/components/pullup-loading/index"
+    "pullup-loading": "/components/pullup-loading/index",
+
+    "app-container": "/app-components/app-container/index",
+    "app-ex-button": "/app-components/app-ex-button/index"
   }
 }

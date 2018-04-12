@@ -7,13 +7,17 @@ Component({
 
 			}
 		},
-		background:{
+		background: {
 			type: Boolean,
 			value: false,
 		},
-		custom:{
+		custom: {
 			type: Boolean,
 			value: false,
+		},
+		fromidUpload: {
+			type: Boolean,
+			value: true,
 		}
 	}
 })

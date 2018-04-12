@@ -1,6 +1,5 @@
-<view class="container">
-
-  <view class="ex-button">
+<app-container>
+  <app-ex-button>
     <custom-button
       className="button gray larg"
       class="ex-button"
@@ -18,9 +17,9 @@
       bind:cancel="cancel"
       bind:ok="ok"
     />
-  </view>
+  </app-ex-button>
 
-  <view class="ex-button">
+  <app-ex-button>
     <custom-button
       className="button gray larg"
       class="ex-button"
@@ -36,21 +35,20 @@
       </view>
     </dialog-alert>
 
-  </view>
+  </app-ex-button>
 
-  <view class="ex-button">
+  <app-ex-button>
     <custom-button
       className="button gray larg"
       class="ex-button"
       bind:click="showDialogAlertClickFreeBtn"
     >
-      <view>自由使用</view>
+      <view>API方式使用</view>
     </custom-button>
-    <dialog-alert id="dialog-alert-free-btn" />
+    <dialog-alert id="dialog-alert-free-btn"/>
+  </app-ex-button>
 
-  </view>
-
-</view>
+</app-container>
 
 
 

@@ -1,6 +1,6 @@
-<collect-fromid>
+<collect-fromid upload="{{fromidUpload}}">
   <view class="page-loading-wrap {{background?'background':''}}" wx:if="{{show}}">
     <slot wx:if="{{custom}}"></slot>
-    <image wx:else class="image" src="./page-loading.svg"></image>
+    <image wx:else class="image" src="http://cdn.jiguo.com/static/WeiXin/images/components/page-loading/page-loading.svg"></image>
   </view>
 </collect-fromid>

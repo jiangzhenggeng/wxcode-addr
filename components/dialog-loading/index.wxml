@@ -6,7 +6,7 @@
   <view class="dialog-loading-wrap">
     <view class="dialog-loading-inner">
       <view class="dialog-loading-icon">
-        <image class="image" src="./loading.svg" />
+        <image class="image" src="http://cdn.jiguo.com/static/WeiXin/images/components/dialog-loading/loading.svg" />
       </view>
       <view class="dialog-loading-text">
         <slot wx:if="{{!message}}"></slot>

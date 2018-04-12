@@ -1,3 +1,5 @@
+import zIndexMarge from "../dialog-modal/z-index-marge";
+
 Component({
 	properties: {
 		show: {
@@ -5,17 +7,13 @@ Component({
 			value: false,
 			observer(newVal) {
 				if (newVal) {
-					this.setTimeoutHandler && clearTimeout(this.setTimeoutHandler)
-					this.setTimeoutHandler = setTimeout(() => {
-						this.setData({
-							show: false
-						}, () => {
-							this._callback && this._callback.call(this)
-							this._callback && delete this._callback
-						})
-					}, this.data.time)
+					this._setCallBackHandel()
 				}
 			}
+		},
+		zIndex: {
+			type: Number,
+			value: zIndexMarge()
 		},
 		message: {
 			type: String,
@@ -23,22 +21,55 @@ Component({
 		},
 		time: {
 			type: Number,
-			value: 5000
+			value: 3000
 		},
 		size: {
 			type: String,
-			value: 'small'
+			value: 'larg'
 		},
 		position: {
 			type: String,
-			value: 'bottom'
+			value: 'center'
+		},
+		// loading/warn或者网络路径
+		icon: {
+			type: String,
+			value: 'http://cdn.jiguo.com/static/WeiXin/images/components/dialog-toast/icon-warn.svg',
+			observer() {
+				this._observerIcon(...arguments)
+			}
 		}
 	},
 	methods: {
+		_observerIcon(icon) {
+			if (!/^https?:\/\//i.test(icon) && icon) {
+				icon = 'http://cdn.jiguo.com/static/WeiXin/images/components/dialog-toast/icon-' + icon + '.svg'
+			}
+			this.setData({
+				icon
+			})
+		},
+		_setCallBackHandel() {
+			this.setData({
+				zIndex: zIndexMarge()
+			})
+			clearTimeout(this.setTimeoutHandler)
+			this.setTimeoutHandler = setTimeout(() => {
+				this.setData({
+					show: false
+				}, () => {
+					this._callback && this._callback(this)
+					if (this._callbackClear) {
+						this._callback = null
+					}
+				})
+			}, this.data.time)
+		},
 		show() {
 			this.setData({
 				show: true
 			})
+			this._setCallBackHandel()
 			this.triggerEvent('show')
 			return this
 		},
@@ -71,9 +102,7 @@ Component({
 			return this
 		},
 		icon(icon) {
-			this.setData({
-				icon
-			})
+			this._observerIcon(icon, this.data.icon)
 			this.data.icon = icon
 			return this
 		},
@@ -91,10 +120,11 @@ Component({
 			this.data.position = position
 			return this
 		},
-		callback(callback) {
+		callback(callback, clear = false) {
 			this._callback = callback || function () {
 
 			}
+			this._callbackClear = !!clear
 			return this
 		}
 	}

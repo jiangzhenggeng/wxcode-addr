@@ -1,8 +1,8 @@
-<view class="dialog-toast-wrap-fok">
+<view class="dialog-toast-wrap-fok" style="z-index:{{zIndex}}">
   <view class="dialog-toast-wrap {{position}}" wx:if="{{show}}">
     <view class="dialog-toast-box {{size}}">
       <view class="dialog-toast-icon" wx:if="{{icon}}">
-        <image class="image" src="./icon-{{icon}}.svg"/>
+        <image class="image" src="{{icon}}"/>
       </view>
       <view class="dialog-toast-text">
         <ellipsis-line line="2">

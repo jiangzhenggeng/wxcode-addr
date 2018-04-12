@@ -1,3 +1,5 @@
+import zIndexMarge from "../dialog-modal/z-index-marge";
+
 var cityList = require('./cityList')
 cityList = cityList.sort(function (a, b) {
 	return a.id > b.id ? -1 : 1
@@ -5,20 +7,25 @@ cityList = cityList.sort(function (a, b) {
 
 
 function getCurrentItemList(cityList, pid, defaultSelect) {
-	var list = []
-	var selectid
+	let list = []
+	let selectid, selectitem
 	for (let i = cityList.length - 1; i >= 0; i--) {
 		let item = cityList[i]
 		if (item.pid == pid) {
-			if (defaultSelect && defaultSelect.name == item.name) {
+			if (
+				defaultSelect &&
+				(defaultSelect.id == item.id || defaultSelect.name == item.name)
+			) {
 				selectid = item.id
+				selectitem = Object.assign({}, item)
 			}
 			list.push(item)
 		}
 	}
 	return {
 		list,
-		selectid
+		selectid,
+		selectitem
 	}
 }
 
@@ -27,12 +34,24 @@ Component({
 	properties: {
 		show: {
 			type: Boolean,
-			value: false
+			value: false,
+			observer(newVal) {
+				if (newVal) {
+					this.setData({
+						zIndex: zIndexMarge()
+					})
+				}
+			}
+		},
+		zIndex: {
+			type: Number,
+			value: zIndexMarge()
 		},
 		addrSelect: {
 			type: Array,
 			value: [],
 			observer() {
+				this._setInitSelectInit = true
 				this._setInitSelect()
 			}
 		},
@@ -46,16 +65,21 @@ Component({
 		_addrSelect: []
 	},
 	ready() {
-		this._setInitSelect()
+		if (!this._setInitSelectInit) {
+			this._setInitSelect()
+		}
 	},
 	methods: {
+		_touchmove(e) {
+			this.triggerEvent('touchmove', e)
+		},
 		_setInitSelect() {
 			var addrSelect = this.data.addrSelect
 			var addrList = []
 			var tempResult, selectid
 			var hasFixGh = true
 			addrSelect = addrSelect.filter((item) => {
-				if (item.name && hasFixGh) {
+				if (item.id || (item.name && hasFixGh)) {
 					return true
 				}
 				hasFixGh = false
@@ -66,15 +90,20 @@ Component({
 			})
 
 			let _addrSelect = []
-			for (var i = 0; i < addrSelect.length || i == 0; i++) {
+			for (var i = 0; i <= addrSelect.length; i++) {
 				selectid = tempResult ? tempResult.selectid : 0
 				tempResult = getCurrentItemList(cityList, selectid, addrSelect[i])
-				addrList[i] = tempResult.list
+				if (tempResult.list && tempResult.list.length) {
+					addrList[i] = tempResult.list
+				}
 				if (tempResult.selectid) {
+					if (tempResult.selectitem) {
+						delete tempResult.selectitem.pid
+						addrSelect[i] = tempResult.selectitem
+					}
 					_addrSelect.push(addrSelect[i])
 				}
 			}
-
 			this.setData({
 				addrList,
 				_addrSelect,
@@ -122,15 +151,19 @@ Component({
 			}
 			addrList.splice(nextTab + 1)
 
+			let temp_currentTab = currentTab >= addrList.length - 1 ? currentTab : currentTab + 1
 			this.setData({
 				_addrSelect,
-				addrList,
-				currentTab: currentTab >= addrList.length - 1 ? currentTab : currentTab + 1
+				addrList
 			}, () => {
 				if (currentTab >= addrList.length - 1) {
 					this.triggerEvent('select', this.data._addrSelect)
 					this.close()
 				}
+				this.setData({
+					currentTab: temp_currentTab
+				})
+
 			})
 		}
 	}

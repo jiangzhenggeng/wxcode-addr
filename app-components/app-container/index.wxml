@@ -1,0 +1,17 @@
+<view class="container">
+  <slot></slot>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

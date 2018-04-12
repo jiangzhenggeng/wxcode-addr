@@ -83,18 +83,22 @@
   content: '';
   display: block;
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 6rpx;
   bottom: 0;
-  left: 0;
+  left: 100%;
   background-color: #F34416;
-  display: none;
+  transition: 0.3s all;
 }
 .area-select-wrap .area2-sub-header .area2-sub-item.on {
   color: #F34416;
 }
 .area-select-wrap .area2-sub-header .area2-sub-item.on::after {
-  display: block;
+  width: 100%;
+  left: 0;
+}
+.area-select-wrap .area2-sub-header .area2-sub-item.on ~ .area2-sub-item:after {
+  left: 0;
 }
 .area-select-wrap .area2-item-wrap {
   flex: 1;

@@ -1,0 +1,3 @@
+<view bind:tap="click">
+  <slot></slot>
+</view>

@@ -1,13 +1,18 @@
-<view class="container">
-  <navigator
+<app-container>
+  <app-ex-button
     wx:for="{{componentsArray}}"
     wx:key="{{item.path}}"
-    url="{{item.path}}"
-    class="select-item-navigator"
   >
-    <view>{{item.name}}</view>
-  </navigator>
-</view>
+    <custom-button
+      className="button gray larg"
+      class="ex-button"
+    >
+      <navigator url="{{item.path}}">
+        <view>{{item.name}}</view>
+      </navigator>
+    </custom-button>
+  </app-ex-button>
+</app-container>
 
 
 

@@ -1,0 +1,22 @@
+<view
+  wx:if="{{show}}"
+  class="share-bottom-wrap-box {{isIponeX?'isIponeX':''}}"
+  style="z-index:{{zIndex}};"
+>
+  <view class="share-bottom-mask" bind:tap="close"></view>
+  <view class="share-bottom-wrap">
+    <view class="share-bottom-box">
+      <slot></slot>
+    </view>
+    <view class="share-bottom-btn" bind:tap="close">取消</view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+

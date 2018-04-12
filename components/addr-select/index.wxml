@@ -1,6 +1,10 @@
-<view catch:tap="open" class="area-select-wrap">
+<view
+  catch:touchmove="_touchmove"
+  catch:tap="open"
+  class="area-select-wrap"
+>
   <slot></slot>
-  <view class="area2-select-wrap {{show?'show':''}}">
+  <view class="area2-select-wrap {{show?'show':''}}" style="z-index:{{zIndex}}">
     <view class="area2-select-mask" catch:tap="close"/>
     <view class="area2-select-inner">
       <view class="area2-select-header">

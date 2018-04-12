@@ -1,12 +1,21 @@
+import zIndexMarge from "./z-index-marge";
+
 export default Behavior({
 	properties: {
 		show: {
 			type: Boolean,
-			value: false
+			value: false,
+			observer(newVal) {
+				if (newVal) {
+					this.setData({
+						zIndex: zIndexMarge()
+					})
+				}
+			}
 		},
 		zIndex: {
 			type: Number,
-			value: 3
+			value: zIndexMarge()
 		},
 		animate: {
 			type: Boolean,
