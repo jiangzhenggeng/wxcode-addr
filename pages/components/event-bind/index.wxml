@@ -1,0 +1,33 @@
+<app-container>
+
+  <view style="height: 1222px">
+    <view class="component-wrap">
+      <view>{{message}}-{{arguments}}</view>
+      <view>{{message2}}-{{arguments2}}</view>
+      <component-a/>
+    </view>
+
+    <view class="component-wrap">
+      <view>{{message3}}-{{arguments3}}</view>
+    </view>
+
+    <view class="component-wrap">
+      <view>{{message4}}-{{arguments4}}</view>
+    </view>
+  </view>
+
+</app-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

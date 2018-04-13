@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "component-b": "../component-b/index"
+  }
+}

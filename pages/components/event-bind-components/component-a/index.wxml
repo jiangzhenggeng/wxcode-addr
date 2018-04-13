@@ -1,0 +1,6 @@
+<view class="component-wrap">
+  <view>{{message}}-{{arguments}}</view>
+  <view>{{message2}}-{{arguments2}}</view>
+
+  <component-b/>
+</view>

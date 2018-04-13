@@ -1,0 +1,16 @@
+.component-wrap {
+  background: #aaa;
+  margin: 10px;
+}
+.btn {
+  padding: 10rpx 20rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  background: #fe5341;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
