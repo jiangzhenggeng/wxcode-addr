@@ -41,7 +41,7 @@ Page({
 	},
 	dialogToastApiClickNetwork() {
 		this.dialogToastApi.message('自定义网路图标')
-			.icon('http://cdn.jiguo.com/static/Pc/develope/style/images/header-logo@2x.png')
+			.icon('https://wx.qlogo.cn/mmopen/vi_32/laCMFX1ZRVErUre2qicIvQvSrf9HRfLItic7vOC2FSk7esjCyBZYd9YaglVT7rZf97ibytPlrZsgrgRuzNMa89RwA/0')
 			.position('center').show()
 	},
 	dialogToastApiClickSouck() {

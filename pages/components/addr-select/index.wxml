@@ -32,8 +32,19 @@
     {{addressId[2]&&addressId[2].name}}
   </view>
 
+
+  <addr-select id="addr-select-api"/>
+  <view bind:tap="selectAreaApi" class="select">API方式调用选择地址</view>
+  <view class="value">
+    {{addressApi[0]&&addressApi[0].name}}-
+    {{addressApi[1]&&addressApi[1].name}}-
+    {{addressApi[2]&&addressApi[2].name}}
+  </view>
+
 </view>
 
+
+<dialog-toast id="dialog-toast" />
 
 
 

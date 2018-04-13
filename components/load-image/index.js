@@ -17,6 +17,10 @@ Component({
 		type: {
 			type: String,
 			value: '1'
+		},
+		debug: {
+			type: Number,
+			value: 0
 		}
 	},
 	methods: {
@@ -25,14 +29,26 @@ Component({
 			let key = this.data.key
 			let width = ev.detail.width
 			let height = ev.detail.height
-			this.setData({
-				imageLoading: true
-			})
-			this.triggerEvent('success', {key, src, width, height})
+			if (this.data.debug > 0) {
+				setTimeout(() => {
+					this.setData({
+						imageLoading: true
+					})
+					this.triggerEvent('success', {key, src, width, height})
+				}, this.data.debug)
+			} else {
+				this.setData({
+					imageLoading: true
+				})
+				this.triggerEvent('success', {key, src, width, height})
+			}
 		},
 		imgOnLoadError() {
 			let src = this.data.src
 			let key = this.data.key
+			this.setData({
+				imageLoading: false
+			})
 			this.triggerEvent('error', {key, src})
 		}
 	}

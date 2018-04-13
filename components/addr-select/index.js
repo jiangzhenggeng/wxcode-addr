@@ -58,6 +58,10 @@ Component({
 		currentTab: {
 			type: Number,
 			value: 0
+		},
+		autoClose: {
+			type: Boolean,
+			value: true
 		}
 	},
 	data: {
@@ -115,12 +119,39 @@ Component({
 				show: true
 			})
 			this.triggerEvent('open')
+			return this
+		},
+		show() {
+			this.open()
+			return this
 		},
 		close() {
 			this.setData({
 				show: false
 			})
 			this.triggerEvent('close')
+			return this
+		},
+		setAddrSelect(addrSelect) {
+			if (({}).toString.call(addrSelect) !== '[object Array]') {
+				return this
+			}
+			this.setData({
+				addrSelect
+			})
+			return this
+		},
+		callback(callback, clear = false) {
+			this._callback = callback || function () {
+			}
+			this._callbackClear = !!clear
+			return this
+		},
+		autoClose(autoClose = true) {
+			this.setData({
+				autoClose
+			})
+			return this
 		},
 		tapTabBar(e) {
 			var dataset = e.currentTarget.dataset
@@ -158,7 +189,11 @@ Component({
 			}, () => {
 				if (currentTab >= addrList.length - 1) {
 					this.triggerEvent('select', this.data._addrSelect)
-					this.close()
+					if (this.data.autoClose) this.close()
+					this._callback && this._callback(this.data._addrSelect, this)
+					if (this._callbackClear) {
+						this._callback = null
+					}
 				}
 				this.setData({
 					currentTab: temp_currentTab

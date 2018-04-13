@@ -1,0 +1,11 @@
+.load-image-wrap {
+  position: relative;
+  width: 700rpx;
+  height: 466.484375rpx;
+  margin: 20rpx auto;
+}
+.load-image-wrap .image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

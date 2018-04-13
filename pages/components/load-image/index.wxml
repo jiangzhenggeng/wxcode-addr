@@ -1,8 +1,18 @@
 <app-container>
 
-  <view class="">
-    <load-image>
-      <iamge />
+  <view wx:for="{{imageUrls}}" wx:key="{{item.src}}" class="load-image-wrap">
+    <!-- load-image组件的src必须和里面image的src相同 -->
+    <!-- debug延时3秒显示图片 -->
+    <!-- type默认显示的图标 -->
+    <load-image
+      src="{{item.src}}"
+      type="{{index%3+1}}"
+      debug="{{3000}}"
+      key="{{index}}"
+      bind:success="imageLoadSuccess"
+      bind:error="imageLoadError"
+    >
+      <image class="image" src="{{item.src}}"/>
     </load-image>
   </view>
 
