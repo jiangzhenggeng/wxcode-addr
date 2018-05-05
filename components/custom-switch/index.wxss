@@ -1,0 +1,64 @@
+@import '/scss/app.wxss'; temp {
+  width: 0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: inline-block;
+  font-size: inherit;
+  height: auto;
+  width: auto;
+}
+button:after,
+button:before {
+  display: none;
+}
+.hover-class-zoom {
+  animation: btn-zoom 0.3s;
+}
+@keyframes btn-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.custom-switch-wrap {
+  position: relative;
+  height: 40rpx;
+  width: 80rpx;
+}
+.custom-switch-wrap .custom-switch-bg,
+.custom-switch-wrap .custom-switch-circle {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #F3F3F3;
+  border-radius: 50rpx;
+}
+.custom-switch-wrap .custom-switch-bg {
+  transition: background-color 0.3s;
+}
+.custom-switch-wrap .custom-switch-circle {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  left: 2rpx;
+  top: 2rpx;
+  height: 36rpx;
+  width: 36rpx;
+  transition: left 0.3s;
+  box-shadow: 0 2rpx 4rpx -2rpx rgba(0, 0, 0, 0.33);
+}
+.custom-switch-wrap.select .custom-switch-bg {
+  background-color: #FFD917;
+}
+.custom-switch-wrap.select .custom-switch-circle {
+  left: 42rpx;
+}

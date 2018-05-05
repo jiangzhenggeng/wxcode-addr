@@ -1,0 +1,8 @@
+<view class="goods-is-new-wrap {{disable?'disable':''}}" bind:tap="switchEvent">
+  <image
+    class="image"
+    src="./{{value.select?'icon-select':'icon-no-select'}}.svg"
+    mode="aspectFit"
+  />
+  <view class="goods-is-new-text">{{label}}</view>
+</view>

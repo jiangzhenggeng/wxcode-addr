@@ -1,7 +1,10 @@
 <view class="component-wrap">
   <view>{{message}}-{{arguments}}</view>
   <view>{{message2}}-{{arguments2}}</view>
+
+  <view bind:tap="emitReadyEventCustom" class="btn">触发ReadyEventCustom</view>
+  <view bind:tap="emitReadyEventCustomOnce" class="btn">只触发一次emitReadyEventCustomOnce</view>
+
+
 </view>
 
-<view bind:tap="emitReadyEventCustom" class="btn">触发ReadyEventCustom</view>
-<view bind:tap="emitReadyEventCustomOnce" class="btn">只触发一次emitReadyEventCustomOnce</view>

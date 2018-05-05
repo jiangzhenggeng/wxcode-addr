@@ -36,6 +36,18 @@ Page({
 			{
 				name: '事件（页面与组件、组件之间通讯）',
 				path: '/pages/components/event-bind/index'
+			},
+			{
+				name: 'custom-switch组件',
+				path: '/pages/components/custom-switch/index'
+			},
+			{
+				name: 'custom-button-active组件',
+				path: '/pages/components/custom-button-active/index'
+			},
+			{
+				name: 'custom-switch-style组件',
+				path: '/pages/components/custom-switch-style/index'
 			}
 		]
 	}

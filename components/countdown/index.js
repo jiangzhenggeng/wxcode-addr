@@ -29,7 +29,13 @@ Component({
 	},
 	relations: {
 		'../countdown-group/index': {
-			type: 'ancestor'
+			type: 'ancestor',
+			linked(target) {
+				target.add(this)
+			},
+			unlinked(target) {
+				target.delete(this)
+			}
 		}
 	},
 	methods: {
@@ -59,20 +65,23 @@ Component({
 				rData.run = true
 				rData.end = false
 				this.triggerEvent('run', rData)
+				this.countdown_run = true
 				return true
 			} else {
 				rData.run = false
 				rData.end = true
 				this.triggerEvent('end', rData)
+				this.countdown_run = false
 				return false
 			}
 		},
 
 		_parseTime() {
-			if (this._endtime) {
+			if (this._endtime && this.countdown_run) {
 				return this._endtime
 			}
 			this._endtime = ParseTime(this.data.endtime)
+			this.countdown_run = true
 			return this._endtime
 		},
 		_formatTime(intDiff) {
@@ -97,13 +106,13 @@ Component({
 				}
 			} else if (this.data.formatType == 2) {
 				if (day > 0) {
-					changeFormat = '%dd天%hh小时%ii分%ss秒'
+					changeFormat = '%dd' + this.data.format.split('%dd').pop()
 				} else if (hour > 0) {
-					changeFormat = '%hh小时%ii分%ss秒'
+					changeFormat = '%hh' + this.data.format.split('%hh').pop()
 				} else if (minute > 0) {
-					changeFormat = '%ii分%ss秒'
+					changeFormat = '%ii' + this.data.format.split('%ii').pop()
 				} else {
-					changeFormat = '%ss秒'
+					changeFormat = '%ss' + this.data.format.split('%ss').pop()
 				}
 			}
 

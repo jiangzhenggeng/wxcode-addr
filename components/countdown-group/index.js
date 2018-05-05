@@ -3,66 +3,64 @@ Component({
 		interval: {
 			type: Number,
 			value: 1000
+		},
+		start: {
+			type: Boolean,
+			value: true
 		}
 	},
 	relations: {
 		'../countdown/index': {
-			type: 'descendant',
-			linked(target) {
-				if (!this.countdownArray) {
-					this.countdownArray = []
-				}
-				if (target.run.call(target)) {
-					this.countdownArray.push(target)
-					this.startAllBack()
-				}
-			},
-			linkChanged() {
-				this.countdownArray = this.getRelationNodes('../countdown/index')
-			},
-			unlinked() {
-				this.countdownArray = this.getRelationNodes('../countdown/index')
-				if (!this.countdownArray.length) {
-					this.stopAllBack()
-				}
-			}
+			type: 'descendant'
 		}
 	},
 	detached() {
-		this.countdownGroupRunStatus &&
-		clearTimeout(this.countdownGroupRunStatus)
-		this.countdownGroupRunStatus = false
+		this.stop()
 	},
 	methods: {
-		startAllBack() {
-			if (this.countdownGroupRunStatus) return
-			this._runingAllCountdown()
-		},
-		stopAllBack() {
-			this.countdownGroupRunStatus &&
-			clearTimeout(this.countdownGroupRunStatus)
-			this.countdownGroupRunStatus = false
-		},
-		_runingAllCountdown() {
-			this.countdownGroupRunStatus = setTimeout(() => {
-				this._runingLoop()
-			}, this.data.interval)
-		},
-		_runingLoop() {
-			this.countdownArray = this.countdownArray.filter((countdown) => {
-				let result = countdown.run.call(countdown)
-				return result
-			})
-
-			this.triggerEvent('run')
-			if (this.countdownArray.length <= 0) {
-				setTimeout(() => {
-					this.stopAllBack()
-					this.triggerEvent('end')
-				}, this.data.interval)
-			} else {
-				this._runingAllCountdown()
+		add(target) {
+			this.countdownArray = this.countdownArray || []
+			this.countdownArray.push(target)
+			if (this.data.start) {
+				target.run.call(target)
+				this.run()
 			}
+		},
+		delete(target) {
+			this.countdownArray = this.countdownArray || []
+			let index = this.countdownArray.indexOf(target)
+			if (index > -1) {
+				this.countdownArray.splice(index, 1)
+			}
+		},
+		run() {
+			if (this.countdownGroupRunStatusFlage) return
+			this.countdownGroupRunStatusFlage = true
+
+			let runFunction = () => {
+				let isEndLength = this.countdownArray.length
+				this.countdownArray.forEach(countdown => {
+					if (!countdown.run.call(countdown)) {
+						isEndLength--
+					}
+				})
+
+				if (isEndLength <= 0) {
+					this.triggerEvent('end')
+					this.stop()
+				} else {
+					this.triggerEvent('run')
+					this.countdownGroupRunStatus = setTimeout(() => {
+						runFunction()
+					}, this.data.interval)
+				}
+			}
+			runFunction()
+
+		},
+		stop() {
+			clearTimeout(this.countdownGroupRunStatus)
+			this.countdownGroupRunStatusFlage = false
 		}
 	}
 })

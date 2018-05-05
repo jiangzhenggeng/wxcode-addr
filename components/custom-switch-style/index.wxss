@@ -1,0 +1,49 @@
+@import '/scss/app.wxss'; temp {
+  width: 0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: inline-block;
+  font-size: inherit;
+  height: auto;
+  width: auto;
+}
+button:after,
+button:before {
+  display: none;
+}
+.hover-class-zoom {
+  animation: btn-zoom 0.3s;
+}
+@keyframes btn-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.goods-is-new-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: #333;
+  font-size: 24rpx;
+}
+.goods-is-new-wrap.disable {
+  color: #CBCBCC;
+}
+.goods-is-new-wrap .image {
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+}
+.goods-is-new-wrap .goods-is-new-text {
+  margin-left: 16rpx;
+}

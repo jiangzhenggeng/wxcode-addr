@@ -1,0 +1,4 @@
+<view bind:tap="switchEvent" class="custom-switch-wrap {{value?'select':''}}">
+  <view class="custom-switch-bg"></view>
+  <view class="custom-switch-circle"></view>
+</view>

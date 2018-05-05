@@ -12,5 +12,5 @@
   align-items: center;
   justify-content: center;
   font-size: 24rpx;
-  margin-bottom: 20rpx;
+  margin: 20rpx;
 }

@@ -1,0 +1,26 @@
+<app-container>
+  <app-ex-button>
+    <custom-switch
+      bind:switch-change="switchEvent"
+      name="custom-switch"
+      value="{{value}}"
+    />
+  </app-ex-button>
+</app-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<view
+  class="custom-button-active-wrap"
+  hover-class="{{!disable?'hover-class-zoom':''}}"
+  bind:tap="click"
+>
+  <slot></slot>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
